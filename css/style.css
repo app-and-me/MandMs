@@ -63,4 +63,18 @@ figure .btnView:hover{
     transform: scale(1.2);
 }
 
+.view {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: low;
+    flex-wrap: wrap;
 
+}
+
+.view .circle{
+    width: 8vw;
+    height: 8vw;
+    background-color: black;
+    border-radius: 50%;
+    margin: 40px 80px;
+}
