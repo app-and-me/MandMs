@@ -63,4 +63,25 @@ figure .btnView:hover{
     transform: scale(1.2);
 }
 
+.write {
+    width: calc(50vw/2);
+    box-sizing: border-box;
+}
 
+.view {
+    width: calc(50vw/2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.view .circle{
+    width: 8vw;
+    height: 8vw;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: 50px;
+}
