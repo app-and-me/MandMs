@@ -24,7 +24,7 @@ figure {
     
 }
 
-figure .btnWrite {
+figure .writeBtn {
     font-size: 50px;
 
     margin-right: auto;
@@ -38,13 +38,13 @@ figure .btnWrite {
     transition: 0.7s;
 }
 
-figure .btnWrite:hover{
+figure .writeBtn:hover{
     opacity: 1;
     transform: scale(1.2);
 }
 
 
-figure .btnView {
+figure .viewBtn {
     font-size: 50px;
 
     margin-left: auto;
@@ -58,7 +58,7 @@ figure .btnView {
     transition: 0.7s;
 }
 
-figure .btnView:hover{
+figure .viewBtn:hover{
     opacity: 1;
     transform: scale(1.2);
 }
