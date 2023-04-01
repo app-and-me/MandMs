@@ -78,9 +78,19 @@ figure .viewBtn:hover{
 }
 
 .view .circle{
+    position: relative;
+
     width: 8vw;
     height: 8vw;
+
     background-color: black;
     border-radius: 50%;
+
     margin-top: 50px;
+}
+
+.view .circle img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
