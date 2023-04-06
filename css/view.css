@@ -5,6 +5,9 @@
 
 body {
     background-color: #E6E6E6;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
 }
 
 .lp {
@@ -21,4 +24,14 @@ body {
 }
 
 .lp img {
+}
+
+.viewer {
+
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
