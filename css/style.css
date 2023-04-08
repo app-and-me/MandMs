@@ -10,6 +10,13 @@ body {
     justify-content: center;
 }
 
+.write {
+    display: flex;
+    align-items: center;
+}
+
+
+
 figure {
     width: 50vw;
     height: 100vh;
