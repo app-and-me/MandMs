@@ -7,7 +7,14 @@ body {
     background-color: #E6E6E6;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+}
+
+.search {
+    width: 48vw;
+    margin-right: 2vw;
+
+    background-color: #FFFFFF;
 }
 
 .lp {
