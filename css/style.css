@@ -8,21 +8,23 @@ figure {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     background: #e6e6e6;
 }
 
 /* 중앙 박스 그룹 */
-section {
+figure section {
     width: 40vw;
     height: 65vh;
     position: absolute;
+    left: 50%;
+    top: 140%;
+    transform: translate(-50%);
+    margin-top: -25vh;
 }
 
 /* 개별 그룹 */
-section article {
+figure section article {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -30,7 +32,7 @@ section article {
     left: 0px;
 }
 
-section article .inner {
+figure section article .inner {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
