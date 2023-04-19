@@ -13,6 +13,8 @@ for (let element of lists){
     i++;
 }
 
+
+// TODO : 회전 했을 때 아티클이 중앙에 배치되지 않는 오류 고치기
 btnLeft.addEventListener("click", ()=>{
     num++;
     frame.style.transform = `rotate(${deg * num}deg)`;
