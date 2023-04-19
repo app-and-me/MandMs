@@ -21,6 +21,7 @@ figure section {
     top: 140%;
     transform: translate(-50%);
     margin-top: -25vh;
+    transition: 1s;
 }
 
 /* 개별 그룹 */
@@ -41,4 +42,128 @@ figure section article .inner {
     display: flex;
     justify-content: center;
     align-content: center;      
+}
+
+figure .btnLeft {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30vw, -50%);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+}
+
+figure .btnLeft span {
+    font: 11px/1 "Binggrae-Two";
+    color: #000000;
+    opacity: 1;
+    transform: translateX(30%);
+    transition: 0.5s;
+}
+
+figure .btnLeft::before { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: left center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnLeft::after { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: left center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnLeft:hover span {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+figure .btnLeft:hover::before {
+    transform: rotate(-30deg);
+}
+
+figure .btnLeft:hover::after {
+    transform: rotate(30deg);
+}
+
+figure .btnRight {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30vw, -50%);
+    display: flex;
+    align-items: center;
+    text-align: right;
+    cursor: pointer;
+}
+
+figure .btnRight span {
+    font: 11px/1 "Binggrae-Two";
+    color: #000000;
+    opacity: 1;
+    transform: translateX(-30%);
+    transition: 0.5s;
+}
+
+figure .btnRight::before { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: right center;
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+figure .btnRight::after { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: right center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnRight:hover span {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+figure .btnRight:hover::before {
+    transform: rotate(30deg);
+}
+
+figure .btnRight:hover::after {
+    transform: rotate(-30deg);
 }
