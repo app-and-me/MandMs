@@ -1,11 +1,10 @@
-function moveLeft(){
-    var el = document.querySelector("figure");
-    el.style.transition = "0.9s"
-    el.style.transform = "translateX(-25vw)"
-}
+const frame = document.querySelector("section");
+const lists  = frame.querySelectorAll("article");
+const deg = 90;
+const len = lists.length-1;
+let i = 0;
 
-function moveRight(){
-    var el = document.querySelector("figure");
-    el.style.transition = "0.9s"
-    el.style.transform = "translateX(25vw)"
+for (let element of lists){
+    element.style.transform = `rotate(${deg*i}deg) translateY(-100vh)`;
+    i++;
 }
