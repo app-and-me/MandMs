@@ -1,108 +1,181 @@
 * {
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
-
-body {
-    background-color: #E6E6E6;
-
-    display: flex;
-    justify-content: center;
-}
-
-.write {
-    display: flex;
-    align-items: center;
-}
-
-
 
 figure {
-    width: 50vw;
+    width: 100%;
     height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    background-color: #FFFFFF;
-
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1;
-}
-
-figure .writeBtn {
-    font-size: 50px;
-
-    margin-right: auto;
-    margin-left: 20px;
-    float: left;
-
-    color: #E6E6E6;
-    opacity: 0.5;
-
-    cursor: pointer;
-    transition: 0.7s;
-}
-
-figure .writeBtn:hover{
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-figure .viewBtn {
-    font-size: 50px;
-
-    margin-left: auto;
-    margin-right: 20px;
-    float: right;
-
-    color: #E6E6E6;
-    opacity: 0.5;
-
-    cursor: pointer;
-    transition: 0.7s;
-}
-
-figure .viewBtn:hover{
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-.write {
-    width: calc(50vw/2);
-    box-sizing: border-box;
-}
-
-.view {
-    width: calc(50vw/2);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    z-index: 0;
-
-}
-
-.view .circle{
+    overflow: hidden;
     position: relative;
-
-    width: 8vw;
-    height: 8vw;
-
-    background-color: black;
-    border-radius: 50%;
-
-    margin-top: 50px;
+    background: #e6e6e6;
 }
 
-.view .circle img {
-    object-fit: cover;
+/* 중앙 박스 그룹 */
+figure section {
+    width: 40vw;
+    height: 65vh;
+    position: absolute;
+    left: 50%;
+    top: 140%;
+    transform: translate(-50%);
+    margin-top: -25vh;
+    transition: 1s;
+}
+
+/* 개별 그룹 */
+figure section article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+figure section article .inner {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-content: center;      
+}
+
+figure section article .inner .image {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+}
+
+figure section article .inner .image img {
+    object-fit: fill;
     width: 100%;
     height: 100%;
 }
 
-.view .circle span {
-    text-align: center;
+
+figure .btnLeft {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30vw, -50%);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+}
+
+figure .btnLeft span {
+    font: 11px/1 "Binggrae-Two";
+    color: #000000;
+    opacity: 1;
+    transform: translateX(30%);
+    transition: 0.5s;
+}
+
+figure .btnLeft::before { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: left center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnLeft::after { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: left center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnLeft:hover span {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+figure .btnLeft:hover::before {
+    transform: rotate(-30deg);
+}
+
+figure .btnLeft:hover::after {
+    transform: rotate(30deg);
+}
+
+figure .btnRight {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30vw, -50%);
+    display: flex;
+    align-items: center;
+    text-align: right;
+    cursor: pointer;
+}
+
+figure .btnRight span {
+    font: 11px/1 "Binggrae-Two";
+    color: #000000;
+    opacity: 1;
+    transform: translateX(-30%);
+    transition: 0.5s;
+}
+
+figure .btnRight::before { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: right center;
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+figure .btnRight::after { /* 이전 버튼 화살표 라인 가상 요소*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: right center;
+    transform: rotate(-180deg);
+    transition: 0.5s;
+}
+
+figure .btnRight:hover span {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+figure .btnRight:hover::before {
+    transform: rotate(30deg);
+}
+
+figure .btnRight:hover::after {
+    transform: rotate(-30deg);
 }
