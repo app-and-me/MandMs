@@ -6,6 +6,7 @@ const btnLeft = document.querySelector(".btnLeft");
 const btnRight = document.querySelector(".btnRight");
 
 let i = 0;
+let frameNumber = 0;
 let num = 0;
 
 for (let element of lists){
@@ -16,11 +17,11 @@ for (let element of lists){
 
 // TODO : 회전 했을 때 아티클이 중앙에 배치되지 않는 오류 고치기
 btnLeft.addEventListener("click", ()=>{
-    num++;
+    num--;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
 
 btnRight.addEventListener("click", ()=>{
-    num--;
+    num++;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
