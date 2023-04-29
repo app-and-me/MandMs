@@ -9,6 +9,8 @@ figure {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
     background: #e6e6e6;
 }
 
@@ -16,11 +18,7 @@ figure {
 figure section {
     width: 40vw;
     height: 65vh;
-    position: absolute;
-    left: 50%;
-    top: 140%;
-    transform: translate(-50%);
-    margin-top: -25vh;
+    margin-top: 120vh;
     transition: 1s;
 }
 
