@@ -13,8 +13,37 @@ body {
 .search {
     width: 48vw;
     margin-right: 2vw;
-
+    display: flex;
+    justify-content: center;
     background-color: #FFFFFF;
+}
+
+.search .bar {
+    margin-top: 5vh;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.search .bar .searchfield{
+    width: 65%;
+    height: 60px;
+
+    background: #F7F7F7;
+    border-radius: 40px;
+    border-style: none;
+}
+
+.search .bar .searchBtn {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+
+    background: #F7F7F7;
+    border-radius: 50px;
+    border-style: none;
 }
 
 .lp {
