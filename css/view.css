@@ -47,10 +47,11 @@ body {
 .field .post {
     margin: 40px;
     transition: 0.5s;
+
 }
 
 .field .post:hover {
-    margin: 40px;
+    margin: 50px;
     transition: 0.5s;
     transform: scale(1.2);
 }
@@ -58,8 +59,8 @@ body {
 
 .field .post img {
     object-fit: fill;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 .field .post img:hover {
@@ -68,4 +69,5 @@ body {
     height: 100%;
     animation: rotation 7s linear 0s infinite;
 }
+
 
