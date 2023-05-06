@@ -46,7 +46,15 @@ body {
 
 .field .post {
     margin: 40px;
+    transition: 0.5s;
 }
+
+.field .post:hover {
+    margin: 40px;
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
 
 .field .post img {
     object-fit: fill;
