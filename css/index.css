@@ -20,6 +20,7 @@ figure section {
     height: 65vh;
     margin-top: 120vh;
     transition: 1s;
+    transform: rotate(0deg);
 }
 
 /* 개별 그룹 */
