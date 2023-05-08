@@ -14,7 +14,8 @@ body {
     width: 48vw;
     margin-right: 2vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #FFFFFF;
 }
 
@@ -57,4 +58,37 @@ body {
     background-color: #FFFFFF;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lp .wrap {
+    width: 70%;
+    height: 70%;
+}
+
+.lp img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.search .result {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #E6E6E6;
+}
+
+.search .result .coverImg {
+    width: 72px;
+    height: 72px;
+    margin-left: 72px;
+    background-color: #E6E6E6;
+}
+
+.search .result span {
+    margin-left: 40px;
 }
