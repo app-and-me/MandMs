@@ -92,3 +92,11 @@ body {
 .search .result span {
     margin-left: 40px;
 }
+
+.search .result .icons {
+margin-left: 25vw;
+}
+
+.search .result .icons i {
+    margin-left: 60px;
+}
