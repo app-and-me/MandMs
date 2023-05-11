@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #E6E6E6;
+    background-color: #ffffff;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -16,7 +16,8 @@ body {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: #E0E0E0;
+    border-radius: 20px;
 }
 
 .wrap form {
@@ -30,9 +31,23 @@ body {
 }
 
 .wrap form #titlefield {
-    width: 80%;
-    height: 40px;
+    width: 40%;
+    height: 64px;
     margin: 30px;
+}
+
+.wrap form #titlefield::-moz-focus-inner {
+    width: 40%;
+    height: 64px;
+    margin: 30px;
+}
+
+.wrap form #endBtn {
+    width: 40%;
+    height: 64px;
+    margin: 30px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .wrap form #contentfield {
