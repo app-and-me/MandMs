@@ -1,24 +1,21 @@
 <?php
-    // TODO : 데이터베이스 테이블 만들기.
-    // 요소는 더 추가될 수 있음!
-    $uTitle = $_POST["title"];
-    $uEmotion = $_POST["Emotion"];
-    $uMusic = $_POST["Music"];
-    $uText = $_POST["Text"];
+    // MySQL 데이터베이스 연결 정보
+    $servername = "localhost";  // MySQL 서버 주소
+    $username = "root";    // MySQL 사용자 이름
+    $password = "0000";    // MySQL 비밀번호
+    $dbname = "m&mz";  // 사용할 데이터베이스 이름
 
-    $servername = "localhost";
-    $username = "username";
-    $password = "password";
-    $dbname = "myDB";
+    // MySQL 데이터베이스에 연결
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // MySQL 데이터베이스에 연결.
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    // 연결 오류 확인.
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    // 연결 확인
+    if ($conn->connect_error) {
+        die("MySQL 연결 실패: " . $conn->connect_error);
     }
-    // 연걸 성공.
-    echo "Connected successfully";
 
+    // 연결 성공 메시지 출력
+    echo "MySQL 연결 성공";
+
+    // 연결 종료
+    $conn->close();
 ?>
