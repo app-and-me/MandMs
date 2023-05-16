@@ -2,7 +2,11 @@
     //connect.php파일을 그대로 가져온다.
     include_once("connect.php");
 
-    // 글 업로드 처리
+    $title = $_POST["title"];
+    $music = $_POST["music"];
+    $emotion = $_POST["emotion"];
+    $content = $_POST["content"];
+
     if ($_SERVER["post"] == "POST") {
         // 제목과 내용 가져오기
         $title = $_POST['title'];
@@ -19,7 +23,4 @@
             echo "글 업로드 오류: " . $conn->error;
         }
     }
-
-// 데이터베이스 연결 종료
-$conn->close();
 ?>
