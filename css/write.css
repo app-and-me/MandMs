@@ -34,7 +34,7 @@ form .musicInfo {
     display: flex;
     align-items: center;
     font-family: 'Pretendard', sans-serif;
-    min-height: 64px;
+    height: 5vh;
     outline: 0;
     background: #FFFFFF;
     width: 100%;
@@ -42,13 +42,13 @@ form .musicInfo {
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 10px;    
     border-radius: 2px;
 }
 
 form .musicInfo #musicCover {
-    width: 64px;
-    height: 64px;
+    width: 3vh;
+    height: 3vh;
     background-color: #E6E6E6;
 }
 
@@ -62,7 +62,6 @@ form .musicInfo #musicTitle {
 
 form input {
     font-family: 'Pretendard', sans-serif;
-    min-height: 64px;
     outline: 0;
     background: #FFFFFF;
     width: 100%;
@@ -83,12 +82,12 @@ form section {
 
 form #title {
     width: 45%;
-    height: 64px;
+    height: 5vh;
 }
 
 form .emojiField {
     width: 50%;
-    height: 64px;
+    height: 5vh;
     background: #FFFFFF;
     display: flex;
     justify-content: space-around;
@@ -109,7 +108,7 @@ form button {
     font-family: 'Pretendard', sans-serif;
     text-transform: uppercase;
     outline: 0;
-    min-height: 64px;
+    height: 5vh ;
     background: #FFFFFF;
     width: 50%;
     transform: translate(50%);
