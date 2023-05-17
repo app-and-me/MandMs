@@ -23,6 +23,7 @@ function insertMp3IntoMySQL(mp3FilePath) {
     console.log('MP3 file inserted successfully.');
   });
 
+  
   // MySQL 연결 종료
   connection.end();
 }
