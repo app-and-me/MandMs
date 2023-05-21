@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(..\img\background.svg);
+}
+
 figure {
     width: 100%;
     height: 100vh;
@@ -11,7 +15,6 @@ figure {
     position: relative;
     display: flex;
     justify-content: center;
-    background: #e6e6e6;
 }
 
 /* 중앙 박스 그룹 */
@@ -35,7 +38,6 @@ figure section article {
 figure section article .inner {
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -69,7 +71,7 @@ figure .btnLeft {
 }
 
 figure .btnLeft span {
-    font: 11px/1 "Binggrae-Two";
+    font: 11px/1;
     color: #000000;
     opacity: 1;
     transform: translateX(30%);
@@ -131,7 +133,7 @@ figure .btnRight {
 }
 
 figure .btnRight span {
-    font: 11px/1 "Binggrae-Two";
+    font: 11px/1;
     color: #000000;
     opacity: 1;
     transform: translateX(-30%);
@@ -177,4 +179,13 @@ figure .btnRight:hover::before {
 
 figure .btnRight:hover::after {
     transform: rotate(-30deg);
+}
+
+.inner .searchfield{
+    width: 65%;
+    height: 60px;
+    outline: 0px;
+    background: #F7F7F7;
+    border-radius: 40px;
+    border-style: none;
 }
