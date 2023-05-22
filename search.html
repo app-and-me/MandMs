@@ -9,46 +9,21 @@
     <title>MusicDiary</title>
 </head>
 <body>
-    <section class="search">
-        <div class="bar">
-            <input type="text" class="searchfield" placeholder="원하는 노래를 검색해주세요." onfocus="this.placeholder = ' '" onblur="this.placeholder = '원하는 노래를 검색해주세요.'">
-            <button class="searchBtn">
-            </button>
-        </div>
-        <div class="result">
-            <div class="coverImg">
-                <img src="img\OMG.jpg" alt="">
+    <article>
+        <section id="search_bar">
+            <div class="image">
+                <a href="search.html"><img src="img\mnmz_logo.svg" alt="mnmz_logo"></a>
             </div>
-            <span class="musicTitle">Ditto</span>
-            <div class="icons">
-                <i class="fa-solid fa-play" style="color: #e6e6e6;"></i>
-                <a href="write.html"><i class="fa-regular fa-pen-to-square fa-lg" style="color: #e6e6e6;"></i></a>
+            <form>
+                <input type="text" class="searchfield" placeholder="원하는 노래를 검색해주세요." onfocus="this.placeholder = ' '" onblur="this.placeholder = '원하는 노래를 검색해주세요.'">
+            </form>
+        </section>
+        <section id="result_section">
+            <div class="result">
+                <div class="img">
+                </div>
             </div>
-        </div>
-        <div class="result">
-            <div class="coverImg"></div>
-            <span class="musicTitle">Ditto</span>
-            <div class="icons">
-                <i class="fa-solid fa-play" style="color: #e6e6e6;"></i>
-                <a href="write.html"><i class="fa-regular fa-pen-to-square fa-lg" style="color: #e6e6e6;"></i></a>
-            </div>
-        </div>
-        <div class="result">
-            <div class="coverImg"></div>
-            <span class="musicTitle">Ditto</span>
-            <div class="icons">
-                <i class="fa-solid fa-play" style="color: #e6e6e6;"></i>
-                <a href="write.html"><i class="fa-regular fa-pen-to-square fa-lg" style="color: #e6e6e6;"></i></a>
-            </div>
-        </div>
-    </section>
-    <section class="lp"> 
-        <div class="wrap">
-            <img src = "img\LPplayer.svg"></div>
-            <div class="icons">
-                <i class="fa-solid fa-play" style="color: #e6e6e6;"></i>
-                <a href="write.html"><i class="fa-regular fa-pen-to-square fa-lg" style="color: #e6e6e6;"></i></a>
-            </div>
-    </section>
+        </section>
+    </article>
 </body>
 </html>
