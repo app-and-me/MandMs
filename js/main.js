@@ -1,6 +1,6 @@
 const frame = document.querySelector("section");
 const lists  = frame.querySelectorAll("article");
-const deg = 90;
+const deg = 120;
 const len = lists.length-1;
 const btnLeft = document.querySelector(".btnLeft");
 const btnRight = document.querySelector(".btnRight");
