@@ -66,6 +66,8 @@ article {
     height: 72px;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
     border-radius: 8px;
+    display: flex;
+    align-items: center;
 }
 
 #result_section .result .image{
