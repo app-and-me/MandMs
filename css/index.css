@@ -41,6 +41,7 @@ figure section article .inner {
     height: 100%;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;    
 }
@@ -55,6 +56,16 @@ figure section article #main .image img {
     object-fit: fill;
     width: 100%;
     height: 100%;
+}
+
+/* main*/
+figure section article .inner .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+figure section article .inner .buttons i {
+    margin: 4%;
 }
 
 /* music_search */
