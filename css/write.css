@@ -16,8 +16,8 @@ body {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
-    background-color: #E0E0E0;
-    border-radius: 20px;
+    background-image: url('..\img\post_background.svg');
+    border-radius: 12px;
 }
 
 form {
@@ -90,7 +90,6 @@ form #title {
 form .emojiField {
     width: 50%;
     height: 5vh;
-    background: #E6E6E6;
     display: flex;
     justify-content: space-around;
     align-items: center;
