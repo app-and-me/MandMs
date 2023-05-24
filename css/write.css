@@ -33,7 +33,9 @@ form {
 form .musicInfo {
     display: flex;
     align-items: center;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
     height: 5vh;
     outline: 0;
     background: #FFFFFF;
@@ -88,7 +90,7 @@ form #title {
 form .emojiField {
     width: 50%;
     height: 5vh;
-    background: #FFFFFF;
+    background: #E6E6E6;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -97,7 +99,12 @@ form .emojiField {
 form .emojiField .emoji {
     width: 50px;
     height: 50px;
-    background-color: #E6E6E6;
+    background-color: white;
+}
+
+form .emojifield .emoji img {
+    width: 100%;
+    height: 100%;
 }
 
 form #text {
