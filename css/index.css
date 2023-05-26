@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -110,7 +117,6 @@ figure section article .inner .buttons i {
     overflow: scroll;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -119,14 +125,46 @@ figure section article .inner .buttons i {
     display: none;
 }
 
+#post_article .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+}
+
+#post_article .chart_field {
+    box-sizing: border-box;
+    background: #ADCDDA;
+    border-radius: 6px;
+    height: 40px;
+    width: 30vw;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#post_article .chart_field #rank {
+    color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+}
+
+#post_article .chart_field #music_info {
+    color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+}
+
 #post_container {
     width: 100%;
-    margin-top: 10%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    place-items: center;
     row-gap: 20px;
     column-gap: 40px;
-    
 }
 
 #post_container .post {
