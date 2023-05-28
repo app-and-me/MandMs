@@ -41,17 +41,25 @@ article {
 }
 
 #search_bar form {
-    width: 55vw;
+    width: 80%;
     height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #ADADAD;
+    border-radius: 100px;
 }
 
 #search_bar form .searchfield {
-    width: 80%;
-    height: 100%;
-    min-height: 40px;
-    border: 1.5px solid #ADADAD;
-    border-radius: 100px;
+    width: 90%;
+    height: 80%;
     background-color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    border: none;
+    outline: none;
 }
 
 #result_section {
