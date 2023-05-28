@@ -99,17 +99,27 @@ figure section article .inner .buttons i {
 }
 
 #music_search form {
-    width: 100%;
+    width: 80%;
     display: flex;
+    align-items: center;
     justify-content: center;
+    border: 1.5px solid #ADADAD;
+    border-radius: 100px;
 }
 
 #music_search form .searchfield {
-    width: 80%;
-    border: 1.5px solid #ADADAD;
-    border-radius: 100px;
+    width: 100%;
     background-color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
 }
+
+#music_search form i {  
+    transform: translateX(-20px);
+}
+
 
 /* post_article */
 #post_article {
