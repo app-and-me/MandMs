@@ -39,8 +39,6 @@ figure section article {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
 }
 
 figure section article .inner {
@@ -97,29 +95,6 @@ figure section article .inner .buttons i {
     width: 100%;
     height: 100%;     
 }
-
-#music_search form {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid #ADADAD;
-    border-radius: 100px;
-}
-
-#music_search form .searchfield {
-    width: 100%;
-    background-color: #FFFFFF;
-    font-family: 'Pretendard';
-    font-size: 1em;
-    font-style: normal;
-    font-weight: 400;
-}
-
-#music_search form i {  
-    transform: translateX(-20px);
-}
-
 
 /* post_article */
 #post_article {
@@ -323,11 +298,3 @@ figure .btnRight:hover::after {
     transform: rotate(-30deg);
 }
 
-.inner .searchfield{
-    width: 65%;
-    height: 60px;
-    outline: 0px;
-    background: #F7F7F7;
-    border-radius: 40px;
-    border-style: none;
-}

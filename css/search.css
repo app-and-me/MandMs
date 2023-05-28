@@ -40,28 +40,6 @@ article {
     object-fit: fill;
 }
 
-#search_bar form {
-    width: 80%;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid #ADADAD;
-    border-radius: 100px;
-}
-
-#search_bar form .searchfield {
-    width: 90%;
-    height: 80%;
-    background-color: #FFFFFF;
-    font-family: 'Pretendard';
-    font-size: 1em;
-    font-style: normal;
-    font-weight: 400;
-    border: none;
-    outline: none;
-}
-
 #result_section {
     margin-top: 10%;
     display: flex;
