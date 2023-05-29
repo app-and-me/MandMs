@@ -129,6 +129,29 @@ figure section article .inner .buttons i {
     align-items: center;
 }
 
+#post_article #top_wrapper {
+    width: 100%;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+#post_article #top_wrapper #emoji_select {
+    width: 10vw;
+    height: 40px;
+    background: #FFFFFF;
+    outline: none;
+    text-align: center;
+    border: 2px solid #818181;
+    border-radius: 8px;
+}
+
+#post_article #top_wrapper #emoji_select option{
+    background: #FFFFFF;
+    border-radius: 8px;
+    
+}
+
 #post_article .chart_field #rank {
     color: #FFFFFF;
     font-family: 'Pretendard';
