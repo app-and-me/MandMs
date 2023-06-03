@@ -16,10 +16,12 @@ for (let element of lists){
 
 btnLeft.addEventListener("click", ()=>{
     num++;
+    if(num == Number.MAX_SAFE_INTEGER) num = 0;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
 
 btnRight.addEventListener("click", ()=>{
     num--;
+    if(num == Number.MIN_SAFE_INTEGER) num = 0;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
