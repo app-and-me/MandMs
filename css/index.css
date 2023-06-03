@@ -69,9 +69,6 @@ figure section article .inner .buttons {
 
 figure section article .inner .buttons div {
     margin: 4%;
-    width: 2vw;
-    height: 2vw;
-    background-color: aqua;
 }
 
 /* music_search */
@@ -108,14 +105,20 @@ figure section article .inner .buttons div {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: flex-start;
     align-content: center;
 }
 
-#articles .inner {
+#articles #top_wrapper {
+    background-color: #FFFFFF;
+    position: fixed;
+    width: 50vw;
+    height: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;    
-    flex-direction: column;
+    flex-direction: row;
+    margin-bottom: 10%;
 }
 
 #articles .chart_field {
@@ -124,7 +127,6 @@ figure section article .inner .buttons div {
     border-radius: 6px;
     height: 40px;
     width: 30vw;
-    margin-bottom: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +136,7 @@ figure section article .inner .buttons div {
     width: 100%;
     box-sizing: content-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #articles #top_wrapper #emoji_select {
@@ -168,6 +170,7 @@ figure section article .inner .buttons div {
 }
 
 #bottom_wrapper {
+    margin-top: 10vw;
     width: 60vw;
     height: 40vh;
     box-sizing: content-box;
