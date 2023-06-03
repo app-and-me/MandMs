@@ -11,13 +11,9 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url(..\img\background.svg);
-}
-
 figure {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -29,7 +25,7 @@ figure {
 figure section {
     width: 60vw;
     height: 65vh;
-    margin-top: 120vh;
+    margin-top: 110vh;
     transition: 1s;
     transform: rotate(0deg);
 }
@@ -51,6 +47,9 @@ figure section article .inner {
     align-content: center;    
 }
 
+
+/* main*/
+
 figure section article #main .image {
     width: 70%;
     height: 70%;
@@ -63,7 +62,6 @@ figure section article #main .image img {
     height: 100%;
 }
 
-/* main*/
 figure section article .inner .buttons {
     display: flex;
     justify-content: center;
@@ -96,28 +94,28 @@ figure section article .inner .buttons i {
     height: 100%;     
 }
 
-/* post_article */
-#post_article {
+/* articles */
+#articles {
     height: 80vh;
+    width: 60vw;
+    box-sizing: border-box;
     overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex-wrap: wrap;
+    align-content: center;
 }
 
-#post_article::-webkit-scrollbar {
-    display: none;
-}
-
-#post_article .inner {
+#articles .inner {
     display: flex;
     justify-content: center;
     align-items: center;    
     flex-direction: column;
 }
 
-#post_article .chart_field {
+#articles .chart_field {
     box-sizing: border-box;
     background: #ADCDDA;
     border-radius: 6px;
@@ -125,18 +123,18 @@ figure section article .inner .buttons i {
     width: 30vw;
     margin-bottom: 10%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
-#post_article #top_wrapper {
+#articles #top_wrapper {
     width: 100%;
     box-sizing: content-box;
     display: flex;
     justify-content: space-between;
 }
 
-#post_article #top_wrapper #emoji_select {
+#articles #top_wrapper #emoji_select {
     width: 10vw;
     height: 40px;
     background: #FFFFFF;
@@ -146,55 +144,79 @@ figure section article .inner .buttons i {
     border-radius: 8px;
 }
 
-#post_article #top_wrapper #emoji_select option{
+#articles #top_wrapper #emoji_select option{
     background: #FFFFFF;
     border-radius: 8px;
     
 }
 
-#post_article .chart_field #rank {
+#articles .chart_field #rank {
     color: #FFFFFF;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
 }
 
-#post_article .chart_field #music_info {
+#articles .chart_field #music_info {
     color: #FFFFFF;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
 }
 
-#post_container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    place-items: center;
-    row-gap: 20px;
-    column-gap: 40px;
+#bottom_wrapper {
+    width: 60vw;
+    height: 40vh;
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#post_container .post {
-    width: 100%;
-    height: 100%;
+#bottom_wrapper .post {
+    width: 13vw;
+    height: 12vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#post_container .post .cover_img {
+#bottom_wrapper .post .image {
     background-color: #ADADAD;
-    width: 100%;
-    height: 100%;
+    width: 12vw;
+    height: 9vw;
+    border-radius: 8px;
 }
 
-#post_container .post .cover_img img {
+#bottom_wrapper .post .image img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
+#bottom_wrapper .post .span_wrapper {
+    width: 12vw;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+#bottom_wrapper .post .span_wrapper .title{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+#bottom_wrapper .post .span_wrapper .song{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #818181;
+}
 /* 버튼 */
 
 figure .btnLeft {
@@ -211,6 +233,7 @@ figure .btnLeft {
 }
 
 figure .btnLeft span {
+    font-family: 'Pretendard';
     font: 11px/1;
     color: #000000;
     opacity: 1;
@@ -273,6 +296,7 @@ figure .btnRight {
 }
 
 figure .btnRight span {
+    font-family: 'Pretendard';
     font: 11px/1;
     color: #000000;
     opacity: 1;
