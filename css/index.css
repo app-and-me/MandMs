@@ -140,6 +140,10 @@ figure section article .inner .buttons div {
 }
 
 #articles #top_wrapper #emoji_select {
+    color: #181818;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
     width: 10vw;
     height: 40px;
     background: #FFFFFF;
@@ -150,9 +154,18 @@ figure section article .inner .buttons div {
 }
 
 #articles #top_wrapper #emoji_select option{
+    color: #181818;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
     background: #FFFFFF;
     border-radius: 8px;
     
+}
+
+#articles .chart_field {
+    display: flex;
+    justify-content: space-around;
 }
 
 #articles .chart_field #rank {
