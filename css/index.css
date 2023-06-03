@@ -67,8 +67,11 @@ figure section article .inner .buttons {
     justify-content: center;
 }
 
-figure section article .inner .buttons i {
+figure section article .inner .buttons div {
     margin: 4%;
+    width: 2vw;
+    height: 2vw;
+    background-color: aqua;
 }
 
 /* music_search */
