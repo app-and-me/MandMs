@@ -16,9 +16,9 @@ body {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
-    border-radius: 12px;
     box-sizing: border-box;
-    background-color: #76ABC2;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
 }
 
 form {
