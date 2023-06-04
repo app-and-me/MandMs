@@ -37,13 +37,13 @@ btnMusic.addEventListener("click", () => {
 });
 
 btnSearch.addEventListener("click", () => {
-    if(num % 360 === 0) num = -1;
+    if(num % 3 === 0) num = -1;
     else num++;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
 
 btnList.addEventListener("click", () => {
-    if(num % 360 === 0) num = 1;
+    if(num % 3 === 0) num = 1;
     else num--;
     frame.style.transform = `rotate(${deg * num}deg)`;
 });
