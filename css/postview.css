@@ -16,6 +16,8 @@ body {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 12px;
 }
 
