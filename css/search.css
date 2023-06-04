@@ -94,7 +94,8 @@ article {
     margin: 0% 10%;
 }
 
-#result_section .result .musicSinger{
+#result_section .result .musicTitle {
+    margin-left: -5vw;
 }
 
 #result_section .result a {
