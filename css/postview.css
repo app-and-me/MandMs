@@ -16,7 +16,6 @@ body {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
-    background-image: url('..\img\post_background.svg');
     border-radius: 12px;
 }
 
@@ -33,7 +32,7 @@ form {
 form .musicInfo {
     display: flex;
     align-items: center;
-    font-family: 'Inter';
+    font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
     height: 5vh;
@@ -56,7 +55,7 @@ form .musicInfo #musicCover {
 
 form .musicInfo #musicTitle {
     margin-left: 40px;
-    font-family: 'Inter';
+    font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
