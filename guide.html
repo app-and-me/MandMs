@@ -7,15 +7,16 @@
     <script src="https://kit.fontawesome.com/bf4b3a2bf1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/guide.css">
     <link rel="icon" href="img/icon.ico">
+    <script defer src="js/guide.js"></script>
     <title>MAndMs</title>
 </head>
 <body>
-    <header>
-        <div class="navbar-menu">
-            <ul>
-                <li id="music">
-                    Search
-                    <ul class="search_toggle">
+    <nav class="navbar-menu">
+        <ul>
+            <li id="search">
+                Search
+                <div class="search_toggle">
+                    <ul>
                         <a href="#">
                             <li>ㄴ 메인페이지</li>
                         </a>
@@ -23,11 +24,15 @@
                             <li>ㄴ 음악 고르기</li>
                         </a>
                     </ul>
-                </li>
-                <li id="search">List</li>
-                <li id="list">Music</li>
-            </ul>
-        </div>
-    </header>
+                </div>
+            </li>
+            <a href="#">
+                <li id="list">List</li>
+            </a>
+            <a href="#">
+                <li id="music">Music</li>
+            </a>
+        </ul>
+    </nav>
 </body>
 </html>
