@@ -364,3 +364,10 @@ figure .btnRight:hover::after {
     transform: rotate(-30deg);
 }
 
+/* guide */
+
+.guide {
+    position: absolute;
+    right: 4vw;
+    bottom: 4vw;
+}
