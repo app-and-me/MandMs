@@ -81,7 +81,8 @@ article {
     align-items: center;
 }
 
-#result_section .result .icons .play{
+.play,
+.pause {
     margin-right: 2vw;
     cursor: pointer;
 }
