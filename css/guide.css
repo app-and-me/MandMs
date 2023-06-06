@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+    color: #181818;
+}
+
+header {
+    width: 10vw;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .navbar-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search_toggle {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    transform: translateX(-5vw);
+}
+
+header .navbar-menu ul {
+    list-style: none;
+}
+
+header .navbar-menu ul li{
+    margin-left: 3vw;
+    font-family: 'Pretendard';
+    cursor: pointer;
+}
