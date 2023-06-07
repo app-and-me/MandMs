@@ -34,17 +34,26 @@ btnRight.addEventListener("click", ()=>{
 btnMusic.addEventListener("click", () => {
     num = 0;
     frame.style.transform = `rotate(${deg * num}deg)`;
+    btnMusic.style.fontWeight = `800`;
+    btnSearch.style.fontWeight = `400`;
+    btnList.style.fontWeight = `400`;
 });
 
 btnSearch.addEventListener("click", () => {
     if(num % 3 === 0) num = -1;
     else num++;
     frame.style.transform = `rotate(${deg * num}deg)`;
+    btnMusic.style.fontWeight = `400`;
+    btnSearch.style.fontWeight = '800';
+    btnList.style.fontWeight = `400`;
 });
 
 btnList.addEventListener("click", () => {
     if(num % 3 === 0) num = 1;
     else num--;
     frame.style.transform = `rotate(${deg * num}deg)`;
+    btnMusic.style.fontWeight = `400`;
+    btnSearch.style.fontWeight = `400`;
+    btnList.style.fontWeight = `800`;
 });
 
