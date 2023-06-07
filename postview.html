@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/postview.css">
     <link rel="icon" href="img/icon.ico">
+    <script defer src="js/write.js"></script>
     <title>MusicDiary</title>
 </head>
-<body style="background-image: url('img/writebg_soso.svg'); background-size: cover;">
+<body onload="setBackground()" style="background-size: cover;">
     <article class="wrap">
         <form>
             <div class="musicInfo">
@@ -27,7 +28,7 @@
                     <div class="emoji" id="emoji5"><img src="img\emoji5" alt="이모지"></div>
                 </div>
             </section>
-            <input type="text" placeholder="text" id="text" name="text"/>
+            <div id="text"></div>
         </form>
         <!-- 음악 재생 -->
         <audio src="music/omg.mp3" autoplay loop></audio>
