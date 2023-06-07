@@ -12,26 +12,42 @@
 </head>
 <body onload="setBackground()" style="background-size: cover;">
     <article class="wrap">
-        <form action = "check.php" method = "post">
+        <form action="check.php" method="post">
             <div class="musicInfo">
                 <div id="musicCover">
                     <img src="img\OMG.jpg" alt="">
                 </div>
                 <span id="musicTitle">ZERO - New Jeans</span>
             </div> 
-            <section><input type="text" placeholder="제목을 입력하시오" id="title" name="title"/>
+            <section>
+                <input type="text" placeholder="제목을 입력하시오" id="title" name="title"/>
                 <div class="emoji_radio">
-                    <button class="emoji_button" id="1">즐거움</button>
-                    <button class="emoji_button" id="2">사랑에 빠짐</button>
-                    <button class="emoji_button" id="3">죽어라</button>
-                    <button class="emoji_button" id="4">html</button>
-                    <button class="emoji_button" id="5">css</button>
+                    <label for="emoji1">
+                        <input type="radio" id="emoji1" name="emoji" value="1">
+                        <i class="fas fa-smile"></i>
+                    </label>
+                    <label for="emoji2">
+                        <input type="radio" id="emoji2" name="emoji" value="2">
+                        <i class="fas fa-heart"></i>
+                    </label>
+                    <label for="emoji3">
+                        <input type="radio" id="emoji3" name="emoji" value="3">
+                        <i class="fas fa-skull"></i>
+                    </label>
+                    <label for="emoji4">
+                        <input type="radio" id="emoji4" name="emoji" value="4">
+                        <i class="fab fa-html5"></i>
+                    </label>
+                    <label for="emoji5">
+                        <input type="radio" id="emoji5" name="emoji" value="5">
+                        <i class="fab fa-css3"></i>
+                    </label>
                 </div>
             </section>
             <input type="text" placeholder="text" id="text" name="text"/>
             <button id="end">끝내기</button> 
         </form>
-        <!--  음악 재생 -->
+        <!-- 음악 재생 -->
         <audio src="music/omg.mp3" autoplay loop></audio>
     </article>
 </body>
