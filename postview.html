@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bf4b3a2bf1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/postview.css">
     <link rel="icon" href="img/icon.ico">
     <script defer src="js/write.js"></script>
-    <title>MusicDiary</title>
+    <title>MandMs</title>
 </head>
 <body onload="setBackground()" style="background-size: cover;">
     <article class="wrap">
-        <form>
+        <div class="inner_content">
+            <!-- 음악 정보 -->
             <div class="musicInfo">
                 <div id="musicCover">
                     <img src="img\OMG.jpg" alt="">
                 </div>
                 <span id="musicTitle">ZERO - New Jeans</span>
-            </div>
+            </div> 
+
             <section>
-                <input type="text" id="title" name="title"/>
-                <div class="emojiField">
-                    <div class="emoji" id="emoji1"><img src="img\emoji5" alt="이모지"></div>
-                    <div class="emoji" id="emoji2"><img src="img\emoji5" alt="이모지"></div>
-                    <div class="emoji" id="emoji3"><img src="img\emoji5" alt="이모지"></div>
-                    <div class="emoji" id="emoji4"><img src="img\emoji5" alt="이모지"></div>
-                    <div class="emoji" id="emoji5"><img src="img\emoji5" alt="이모지"></div>
+                <div id="title">
+                    <span><!-- 제목 불러오기 -->글 제목</span>
+                </div>
+                <div class="emoji_div">
+                    <!-- 저 경로에 숫자 부분만 DB에서 불러오기 -->
+                    <img src="img/emoji2.svg" alt="">
                 </div>
             </section>
-            <div id="text"></div>
-        </form>
-        <!-- 음악 재생 -->
-        <audio src="music/omg.mp3" autoplay loop></audio>
+            <div id="text">
+                <span><!-- 글 내용-->글 내용</span>
+            </div>
+            <button id="prev_page">이전 페이지로</button> 
+            <!--  음악 재생 -->
+            <audio src="music/omg.mp3" autoplay loop></audio>
+        </div>
     </article>
 </body>
 </html>

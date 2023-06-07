@@ -4,7 +4,6 @@
 }
 
 body {
-    background-color: #ffffff;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -15,24 +14,26 @@ body {
     height: 70vh;
     margin-top: 15vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 12px;
 }
 
-form {
+.inner_content {
     position: relative;
     z-index: 1;
     width: 100%;
     height: 100%;
-    margin: 0 auto 100px;
+    /* margin: 0 auto 100px; */
     padding: 45px;
     text-align: center;
 }
 
-form .musicInfo {
+.musicInfo {
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-family: 'Pretendard';
     font-style: normal;
@@ -49,19 +50,19 @@ form .musicInfo {
     border-radius: 2px;
 }
 
-form .musicInfo #musicCover {
-    width: 3vh;
-    height: 3vh;
+.musicInfo #musicCover {
+    width: 4vh;
+    height: 4vh;
     background-color: #E6E6E6;
 }
 
-form .musicInfo #musicCover img {
+.musicInfo #musicCover img{
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
-form .musicInfo #musicTitle {
+.musicInfo #musicTitle {
     margin-left: 40px;
     font-family: 'Pretendard';
     font-style: normal;
@@ -69,7 +70,7 @@ form .musicInfo #musicTitle {
     font-size: 20px;
 }
 
-form input {
+#text, #title {
     font-family: 'Pretendard', sans-serif;
     outline: 0;
     background: #FFFFFF;
@@ -82,19 +83,19 @@ form input {
     border-radius: 2px;
 }
 
-form section {
+section {
     width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
 }
 
-form #title {
+#title {
     width: 45%;
     height: 5vh;
 }
 
-form .emojiField {
+.emoji_div {
     width: 50%;
     height: 5vh;
     display: flex;
@@ -102,17 +103,35 @@ form .emojiField {
     align-items: center;
 }
 
-form .emojiField .emoji {
-    width: 50px;
-    height: 50px;
-    background-color: white;
+#text {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-form .emojifield .emoji img {
+#text span {
     width: 100%;
     height: 100%;
 }
+button {
+    font-family: 'Pretendard', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    height: 5vh ;
+    background: #FFFFFF;
+    width: 50%;
+    transform: translate(50%);
+    border: 0;
+    padding: 15px;
+    color: #818181;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 2px;
+}
 
-form #text {
-    height: 40vh;
+button:hover,.form button:active,.form button:focus {
+    background: #FFFFFF;
 }
