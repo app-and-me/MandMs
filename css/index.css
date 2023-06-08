@@ -50,21 +50,50 @@ figure section article .inner {
 
 /* main*/
 
-figure section article #main .image {
-    width: 70%;
-    height: 70%;
+figure section article #main .pic {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
     margin: auto;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-figure section article #main .image img {
-    object-fit: fill;
-    width: 100%;
-    height: 100%;
+figure section article #main .pic::before,
+figure section article #main .pic::after {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    background-image: inherit;
+    background-position: center;
+    background-repeat: inherit;
+    background-size: cover;
+    transform-origin: center center;
+}
+
+figure section article #main .pic::before {
+    transform: translateY(10%);
+    filter: blur(20px);
+}
+
+.dot {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    z-index: 3;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 figure section article .inner .buttons {
     display: flex;
     justify-content: center;
+    transform: translateY(30%);
 }
 
 figure section article .inner .buttons div {
