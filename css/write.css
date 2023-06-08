@@ -16,7 +16,8 @@ body {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 }
 
@@ -64,7 +65,7 @@ form .musicInfo #musicTitle {
     margin-left: 40px;
     font-family: 'Pretendard';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 200;
     font-size: 20px;
 }
 
