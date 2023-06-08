@@ -1,26 +1,34 @@
-* {
+@keyframes pan {
+    100% {
+      background-position: 10% 40%;
+    }
+  }
+  
+  * {
     margin: 0px;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-}
-
-.wrap {
+    animation: pan 7s infinite alternate linear;
+  }
+  
+  .wrap {
     width: 40vw;
     height: 70vh;
     margin-top: 15vh;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-}
-
-form {
+  }
+  
+  form {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -28,9 +36,9 @@ form {
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
-}
-
-form .musicInfo {
+  }
+  
+  form .musicInfo {
     display: flex;
     align-items: center;
     font-family: 'Pretendard';
@@ -44,31 +52,31 @@ form .musicInfo {
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 10px;    
+    font-size: 10px;
     border-radius: 2px;
-}
-
-form .musicInfo #musicCover {
+  }
+  
+  form .musicInfo #musicCover {
     width: 4vh;
     height: 4vh;
     background-color: #E6E6E6;
-}
-
-form .musicInfo #musicCover img{
+  }
+  
+  form .musicInfo #musicCover img {
     width: 100%;
     height: 100%;
     object-fit: fill;
-}
-
-form .musicInfo #musicTitle {
+  }
+  
+  form .musicInfo #musicTitle {
     margin-left: 40px;
     font-family: 'Pretendard';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 200;
     font-size: 20px;
-}
-
-form input {
+  }
+  
+  form input {
     font-family: 'Pretendard', sans-serif;
     outline: 0;
     background: #FFFFFF;
@@ -79,73 +87,65 @@ form input {
     box-sizing: border-box;
     font-size: 14px;
     border-radius: 2px;
-}
-
-form section {
+  }
+  
+  form section {
     width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-}
-
-form #title {
+  }
+  
+  form #title {
     width: 45%;
     height: 5vh;
-}
-
-form .emoji_field {
-    width: 50%;
-    height: 5vh;
+  }
+  
+  form .emoji_radio {
     display: flex;
+    flex-direction: row;
+    height: 5vh;
     justify-content: space-between;
     align-items: center;
     transform: translateX(-1vw);
-}
-
-form #text {
+  }
+  
+  form .emoji_radio label {
+    display: flex;
+    align-items: center;
+  }
+  
+  form .emoji_radio input[type="radio"] {
+    display: none;
+  }
+  
+  form .emoji_radio i {
+    margin-right: 5px;
+  }
+  
+  form #text {
     height: 40vh;
-}
-
-button {
+  }
+  
+  button {
     font-family: 'Pretendard', sans-serif;
     text-transform: uppercase;
     outline: 0;
-    height: 5vh ;
+    height: 5vh;
     background: #FFFFFF;
     width: 50%;
     transform: translate(50%);
     border: 0;
-    padding: 15px;
-    color: #818181;
+    color: #181818;
     font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 2px;
-}
-
-form button:hover,.form button:active,.form button:focus {
+  }
+  
+  button:hover,
+  button:active,
+  button:focus {
     background: #FFFFFF;
-}
-
-.emoji_button{
-    width: 4vh;
-    height: 4vh;
-    background: none;
-    opacity: 0.5;
-    transition: 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.emoji_button:hover {
-    background: none;
-    opacity: 1;
-}
-
-.emoji_button img {
-    width: 4vh;
-    height: 4vh;
-    object-fit: fill;
-}
+  }
+  
