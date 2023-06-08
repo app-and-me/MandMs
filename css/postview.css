@@ -1,3 +1,9 @@
+@keyframes pan {
+    100% {
+        background-position: 10% 40%;
+    }
+}
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -7,6 +13,7 @@ body {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    animation: pan 7s infinite alternate linear;
 }
 
 .wrap {
