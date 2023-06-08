@@ -93,19 +93,20 @@ form #title {
     height: 5vh;
 }
 
-form .emoji_radio {
+form .emoji_field {
     width: 50%;
     height: 5vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    transform: translateX(-1vw);
 }
 
 form #text {
     height: 40vh;
 }
 
-form button {
+button {
     font-family: 'Pretendard', sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -125,4 +126,26 @@ form button {
 
 form button:hover,.form button:active,.form button:focus {
     background: #FFFFFF;
+}
+
+.emoji_button{
+    width: 4vh;
+    height: 4vh;
+    background: none;
+    opacity: 0.5;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoji_button:hover {
+    background: none;
+    opacity: 1;
+}
+
+.emoji_button img {
+    width: 4vh;
+    height: 4vh;
+    object-fit: fill;
 }
