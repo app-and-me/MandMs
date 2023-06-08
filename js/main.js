@@ -10,6 +10,9 @@ const btnMusic = document.querySelector("#music");
 const btnSearch = document.querySelector("#search");
 const btnList = document.querySelector("#list");
 
+const searchBar = document.querySelector("#search_bar");
+const searchPage = "search.html";
+
 let i = 0;
 let frameNumber = 0;
 let num = 0;
@@ -57,3 +60,6 @@ btnList.addEventListener("click", () => {
     btnList.style.fontWeight = `800`;
 });
 
+searchBar.addEventListener("click", ()=>{
+    window.open(searchPage);
+});
