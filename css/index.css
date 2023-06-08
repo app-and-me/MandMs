@@ -5,6 +5,12 @@
     font-style: normal;
 }
 
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -59,6 +65,7 @@ figure section article #main .pic {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: rotate_image 15s linear infinite;transform-origin: 50% 50%;
 }
 
 figure section article #main .pic::before,
@@ -77,8 +84,9 @@ figure section article #main .pic::after {
 }
 
 figure section article #main .pic::before {
-    transform: translateY(10%);
+    transform: scale(1.01);
     filter: blur(20px);
+    animation: none;
 }
 
 .dot {
