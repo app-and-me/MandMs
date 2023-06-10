@@ -108,6 +108,12 @@ figure section article .inner .buttons div {
     margin: 4%;
 }
 
+#play i, #backward i, #forward i{
+    cursor: pointer;
+}
+#play:hover, #backward:hover, #forward:hover {
+    transform: scale(1.1);
+}
 /* music_search */
 #music_search {
     width: 100%;

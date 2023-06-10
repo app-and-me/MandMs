@@ -13,6 +13,8 @@ const btnList = document.querySelector("#list");
 const searchBar = document.querySelector("#search_bar");
 const searchPage = "search.html";
 
+const play = document.querySelector("#play");
+
 let i = 0;
 let frameNumber = 0;
 let num = 0;
