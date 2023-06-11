@@ -73,7 +73,6 @@ let audio = document.querySelector("audio");
 
 function setAudioList() {
   audioList.push("music/1 of 1.mp3");
-  audioList.push("music/sugar.mp3");
   audioList.push("music/가인, 조권 - 우리 사랑하게 됐어요 [가사 Lyrics].mp3");
   audioList.push("music/나는 나비 (A Flying Butterfly).mp3");
   audioList.push("music/내 자존감에 시동 걸어주는 노래   Katy Perry (케이티 페리) - Roar (가사 해석 lyrics).mp3");
