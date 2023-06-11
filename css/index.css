@@ -108,6 +108,12 @@ figure section article .inner .buttons div {
     margin: 4%;
 }
 
+#play i, #backward i, #forward i{
+    cursor: pointer;
+}
+#play:hover, #backward:hover, #forward:hover {
+    transform: scale(1.1);
+}
 /* music_search */
 #music_search {
     width: 100%;
@@ -167,6 +173,18 @@ figure section article .inner .buttons div {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
+}
+
+.rank {
+    margin-right: 10vw;
+}
+
+.rank, .music_info {
+    color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
 }
 
 #articles #top_wrapper {
@@ -197,7 +215,6 @@ figure section article .inner .buttons div {
     font-weight: 500;
     background: #FFFFFF;
     border-radius: 8px;
-    
 }
 
 #articles .chart_field {

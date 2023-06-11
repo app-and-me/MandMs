@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="icon" href="img/icon.ico">
     <script defer src="js/main.js"></script>
+    <script defer src="js/rank.js"></script>
     <title>MAndMs</title>
 </head>
 <body>
@@ -46,7 +47,7 @@
                         </div>
                     </div>
                     <!-- 음악 재생 -->
-                    <audio src="music/omg.mp3" autoplay loop></audio>
+                    <audio src="music/omg.mp3" autoplay></audio>
                 </div>
             </article>
 
@@ -65,8 +66,28 @@
                 <div class="inner" id="articles">
                     <div id="top_wrapper">
                         <div class="chart_field">
-                            <span id="rank">1위</span>
-                            <span id="music_info">Ditto-뉴진스</span>
+                            <!-- 여기서부터 -->
+                            <div id="rank_1">
+                                <span class="rank">1위</span>
+                                <span class="music_info">Ditto-뉴진스</span>
+                            </div>
+                            <div id="rank_2">
+                                <span class="rank">2위</span>
+                                <span class="music_info">Ditto-뉴진스</span>
+                            </div>
+                            <div id="rank_3">
+                                <span class="rank">3위</span>
+                                <span class="music_info">Ditto-뉴진스</span>
+                            </div>
+                            <div id="rank_4">
+                                <span class="rank">4위</span>
+                                <span class="music_info">Ditto-뉴진스</span>
+                            </div>
+                            <div id="rank_5">
+                                <span class="rank">5위</span>
+                                <span class="music_info">Ditto-뉴진스</span>
+                            </div>
+                            <!-- 여기까지 1~5위 정보 넣어주면 돼 -->
                         </div>
                         <select id="emoji_select">
                             <option value="all">전체</option>
