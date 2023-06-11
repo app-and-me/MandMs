@@ -48,26 +48,6 @@
                     </div>
                     <!-- 음악 재생 -->
                     <audio src="music/omg.mp3" autoplay></audio>
-                    <script>
-                        // 오디오 재생이 끝나면 다음 트랙으로 변경
-                        let audioList = [];
-                        let audioIndex = 0;
-                        let audio = document.querySelector("audio");
-                        // 여기 함수에
-                        function setAudioList(){
-                            // 이 부분에 DB에 있는 mp3 경로 모두 push할 수 있니??
-                            audioList.push("music/1 of 1.mp3");
-                        }
-                        setAudioList();
-
-                        audio.addEventListener("ended", ()=>{
-                            console.log("곡 끝남");
-                            if(audioIndex > audioList.length-1) audioIndex = 0;
-                            audio.src = audioList[audioIndex++];
-                            
-                            audio.play();
-                        })
-                    </script>
                 </div>
             </article>
 
