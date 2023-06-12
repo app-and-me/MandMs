@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 // 데이터베이스 삭제 쿼리
 $sql_drop_db = "DROP DATABASE IF EXISTS `$dbname`";
 if ($conn->query($sql_drop_db) === TRUE) {
-    echo "데이터베이스 삭제 완료";
+    //echo "데이터베이스 삭제 완료";
 } else {
     echo "데이터베이스 삭제 실패: " . $conn->error;
 }
@@ -22,7 +22,7 @@ if ($conn->query($sql_drop_db) === TRUE) {
 // 데이터베이스 생성 쿼리
 $sql_create_db = "CREATE DATABASE IF NOT EXISTS `$dbname`";
 if ($conn->query($sql_create_db) === TRUE) {
-    echo "데이터베이스 생성 완료";
+    //echo "데이터베이스 생성 완료";
 } else {
     echo "데이터베이스 생성 실패: " . $conn->error;
 }
@@ -40,7 +40,7 @@ $sql_create_table = "CREATE TABLE IF NOT EXISTS information (
 )";
 
 if ($conn->query($sql_create_table) === TRUE) {
-    echo "다이어리 테이블 생성 완료";
+    //echo "다이어리 테이블 생성 완료";
 } else {
     echo "다이어리 테이블 생성 실패: " . $conn->error;
 }
@@ -56,7 +56,7 @@ $sql_create_music_table = "CREATE TABLE IF NOT EXISTS music (
 )";
 
 if ($conn->query($sql_create_music_table) === TRUE) {
-    echo "음악 테이블 생성 완료";
+    //echo "음악 테이블 생성 완료";
 } else {
     echo "음악 테이블 생성 실패: " . $conn->error;
 }
@@ -138,7 +138,7 @@ VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents
        ('우리의 꿈', '코요태', '"  . $conn->real_escape_string(file_get_contents("img/우리의 꿈.jpg")) . "', 'music/코요태 - 우리의 꿈 가사 (Lyrics).mp3')";
 
 if ($conn->query($sql_insert_music) === TRUE) {
-    echo "데이터 삽입 완료";
+    //echo "데이터 삽입 완료";
 } else {
     echo "데이터 삽입 실패: " . $conn->error;
 }
