@@ -12,12 +12,13 @@ pause.addEventListener("click", e => {
     e.currentTarget.closest("article").querySelector("audio").currentTime = 0;
 });
 
+// 페이지 로드 시 모든 노래 정보 가져오기
+window.onload = function() {
+    searchAllMusic();
+}
 
 function searchMusic() {
-    // 입력 필드에서 검색어 가져오기
     var searchQuery = document.getElementById('searchQuery').value;
-
-    // search.php 파일에 AJAX 요청 보내기
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -29,5 +30,19 @@ function searchMusic() {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("searchQuery=" + searchQuery);
 }
+
+function searchAllMusic() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // 결과 섹션을 서버 응답으로 업데이트하기
+            document.getElementById('result_section').innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "searchAll.php", true);
+    xhttp.send();
+}
+
+
 
 
