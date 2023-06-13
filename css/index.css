@@ -125,7 +125,7 @@ figure section article .inner .buttons div {
     align-items: center;      
 }
 
-a {
+#music_search a {
     width: 100%;
     display: flex;
     align-items: center;
