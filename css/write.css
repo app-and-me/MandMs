@@ -102,6 +102,7 @@ form section {
 form #title {
   width: 50%;
   height: 5vh;
+  font-size: 0.9rem;
 }
 
 form .emoji_radio {
@@ -136,6 +137,7 @@ form .emoji_radio img {
 
 form #text {
   height: 40vh;
+  font-size: 1rem;
 }
 
 button {
