@@ -22,9 +22,10 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $album = $row['album'];
 
+        // 글에 맞는 이미지가 나오려면?
         $albumUpload = '<div class="image">
-                        <img src="data:image/jpeg;base64,' . base64_encode($album) . '" alt="앨범커버  ">
-                      </div>';
+                            <img src="data:image/jpeg;base64,' . base64_encode($album) . '" alt="앨범커버  ">
+                        </div>';
     }
 
     echo $albumUpload;
