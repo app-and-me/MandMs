@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="pause">
                             <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                         </div>
-                        <a href="write.html" class="write">
+                        <a href="write.html" target="_top" class="write">
                             <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                         </a>
                     </div>
