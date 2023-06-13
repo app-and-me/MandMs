@@ -125,6 +125,15 @@ figure section article .inner .buttons div {
     align-items: center;      
 }
 
+#music_search a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #818181;
+}
+
 #music_search .image {
     width: 20%;
     height: 20%; 
