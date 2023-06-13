@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // 글이 성공적으로 업로드되었을 때, index.html의 write_result 화면으로 리다이렉트
-        header("Location: index.html#write_result");
+        header("Location: index.html");
         exit(); // 리다이렉트 후에 코드 실행 중단
     } else {
         echo "글 업로드 오류: " . $conn->error;
