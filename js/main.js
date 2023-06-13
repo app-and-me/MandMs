@@ -62,9 +62,6 @@ btnList.addEventListener("click", () => {
   btnList.style.fontWeight = `800`;
 });
 
-searchBar.addEventListener("click", () => {
-  window.open(searchPage);
-});
 
 // 오디오 재생이 끝나면 다음 트랙으로 변경
 let audioList = [];
