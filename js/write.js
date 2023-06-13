@@ -1,5 +1,17 @@
 const body = document.querySelector("body");
 const audio = document.querySelector("audio");
+const labels = document.querySelectorAll("label");
+
+for(let i in labels){
+    labels[i].addEventListener("click", ()=>{
+        labels[0].style.opacity = 0.6;
+        labels[1].style.opacity = 0.6;
+        labels[2].style.opacity = 0.6;
+        labels[3].style.opacity = 0.6;
+        labels[4].style.opacity = 0.6;
+        labels[i].style.opacity = 1;
+    });
+}
 
 function setBackground() {
     let num = Math.floor(Math.random() * 5 + 1);
