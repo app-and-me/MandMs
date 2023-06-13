@@ -2,7 +2,7 @@
 // MySQL 서버 연결 정보
 $servername = "localhost";
 $username = "root";
-$password = "0000";
+$password = "1234";
 $dbname = "mandmz";
 
 // 데이터베이스 연결
