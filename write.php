@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     $image = $_POST['image'];
     $title = $_POST['title'];
     $artist = $_POST['artist'];

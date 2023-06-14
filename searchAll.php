@@ -30,27 +30,28 @@ if ($result->num_rows > 0) {
 
         // 음악 데이터를 표시하는 HTML 코드를 생성
         $musicElement = '
-            <div class="result">
-                <div class="image">
-                    <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+        <div class="result">
+            <div class="image">
+                <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+            </div>
+            <span class="musicTitle">' . $title . '</span>
+            <div class="icons">
+                <div class="play">
+                    <i class="fa-solid fa-play fa-xl" style="color: #2b2b2b;"></i>
                 </div>
-                <span class="musicTitle">' . $title . '</span>
-                <div class="icons">
-                    <div class="play">
-                        <i class="fa-solid fa-play fa-xl" style="color: #2b2b2b;"></i>
-                    </div>
-                    <div class="pause">
-                        <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
-                    </div>
-                    <a href="write.html" class="write">
-                        <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
-                    </a>
+                <div class="pause">
+                    <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                 </div>
-                <span class="musicSinger">' . $artist . '</span>
-                
-                <!-- 음악 재생 -->
-                <audio src="' . $audio . '"></audio>
-            </div>';
+                <a href="write.html" onclick="sendMusicData(\'' . base64_encode($image) . '\', \'' . $title . '\', \'' . $artist . '\', \'' . $audio . '\')" target="_top" class="write">
+                    <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
+                </a>
+            </div>
+            <span class="musicSinger">' . $artist . '</span>
+            
+            <!-- 음악 재생 -->
+            <audio src="' . $audio . '"></audio>
+        </div>';
+
 
         // 모든 음악 데이터를 표시하는 HTML 코드를 출력
         echo $musicElement;

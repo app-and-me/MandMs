@@ -1,7 +1,7 @@
 <?php
 include_once("connect.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     // 검색어를 폼에서 가져옴
     $searchQuery = $_POST['searchQuery'];
 
