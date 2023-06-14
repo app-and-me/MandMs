@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="pause">
                             <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                         </div>
-                        <a href="write.html?image=' . base64_encode($image) . '&title=' . urlencode($title) . '&artist=' . urlencode($artist) . '&audio=' . urlencode($audio) . '" target="_top" class="write">
+                        <a href="write.html" onclick="sendMusicData(\'' . base64_encode($image) . '\', \'' . $title . '\', \'' . $artist . '\', \'' . $audio . '\')" target="_top" class="write">
                             <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                         </a>
                     </div>
@@ -56,11 +56,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <audio src="' . $audio . '"></audio>
                 </div>';
 
-            // 검색 결과 섹션에 표시할 HTML 코드를 출력
+            // 검색 결과 섹션에 표시할 HTML 코드를 반환
             echo $musicElement;
         }
     } else {
-        // 결과가 없을 경우 메시지를 표시
+        // 결과가 없을 경우 메시지를 반환
         echo "검색 결과가 없습니다.";
     }
 
