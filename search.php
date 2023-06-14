@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
                         <div class="pause">
                             <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                         </div>
-                        <a href="write.html" onclick="sendMusicData(\'' . base64_encode($image) . '\', \'' . $title . '\', \'' . $artist . '\', \'' . $audio . '\')" target="_top" class="write">
+                        <a href="#" onclick="sendMusicData(\'' . base64_encode($image) . '\', \'' . $title . '\', \'' . $artist . '\', \'' . $audio . '\')" target="_top" class="write">
                             <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                         </a>
                     </div>
