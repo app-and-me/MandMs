@@ -79,7 +79,7 @@ form .musicInfo #musicTitle {
   font-size: 20px;
 }
 
-form input {
+form textarea, form #title {
   font-family: 'Pretendard', sans-serif;
   outline: 0;
   background: #FFFFFF;
@@ -103,6 +103,9 @@ form #title {
   width: 50%;
   height: 5vh;
   font-size: 0.9rem;
+  outline: none;
+  border: none;
+
 }
 
 form .emoji_radio {
@@ -136,6 +139,7 @@ form .emoji_radio img {
 }
 
 form #text {
+  width: 100%;
   height: 40vh;
   font-size: 1rem;
 }
