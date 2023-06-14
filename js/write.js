@@ -33,14 +33,15 @@ document.getElementById("end").onclick = function () {
 
 // Ajax 요청을 통해 동적으로 추가되는 HTML 코드를 받아서 추가하는 함수
 function addMusicElement(response) {
-    const wrap = document.querySelector(".wrap");
-    wrap.innerHTML = response;
+    const dynamicContent = document.getElementById("result_article");
+    dynamicContent.innerHTML = response;
 }
+
 
 // 페이지 로드 시 초기 설정
 setBackground();
 
-// 가져온 값을 write.php로 전달하는 Ajax 요청
+// Ajax 요청을 보내는 함수
 function sendMusicData(image, title, artist, audio) {
     // 전달할 데이터 생성
     const data = {
@@ -52,12 +53,12 @@ function sendMusicData(image, title, artist, audio) {
 
     // Ajax 요청
     $.ajax({
-        url: 'write.php',
+        url: 'search.php',
         type: 'POST',
         data: data,
         success: function (response) {
             // 요청이 성공하면 동적으로 HTML 코드를 추가
-            $('article.wrap').html(response);
+            addMusicElement(response);
         },
         error: function (xhr, status, error) {
             // 요청이 실패한 경우 에러 처리
@@ -65,10 +66,3 @@ function sendMusicData(image, title, artist, audio) {
         }
     });
 }
-
-// 페이지 로드 시 초기 설정
-$(document).ready(function() {
-    setBackground();
-});
-
-
