@@ -1,16 +1,24 @@
-const play = document.querySelectorAll(".play");
-const pause = document.querySelectorAll(".pause");
-const audio = document.querySelectorAll("audio");
+var audioPlayer = null; // 전역 변수로 Audio 객체 선언
 
-function playAudio(element) {
-    var audio = element.parentNode.nextElementSibling;
-    audio.play();
+function playAudio(music_path) {
+    if (audioPlayer) {
+        audioPlayer.pause(); // 이미 재생 중인 경우 일시 정지
+    }
+    audioPlayer = new Audio(music_path);
+    audioPlayer.load();
+    audioPlayer.play();
 }
 
-function pauseAudio(element) {
-    var audio = element.parentNode.nextElementSibling;
-    audio.pause();
+function pauseAudio(music_path) {
+    if (audioPlayer) {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    }
 }
+
+// 나머지 코드는 동일하게 유지
+
+
 
 
 window.onload = function() {
