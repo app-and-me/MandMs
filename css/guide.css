@@ -28,7 +28,7 @@ a {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 0.9vw;
     color: #565656;
 
 }
@@ -39,6 +39,7 @@ a {
 
 .navbar-menu ul li{
     margin-bottom: 2vh;
+    font-size: 0.9vw;
     font-family: 'Pretendard';
     cursor: pointer;
 }
@@ -56,6 +57,11 @@ a {
     justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
+}
+
+
+.prev_page span{
+    font-size: 1vw;
 }
 
 .icon {

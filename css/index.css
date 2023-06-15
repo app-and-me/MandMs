@@ -109,6 +109,7 @@ figure section article .inner .buttons div {
 }
 
 #play i, #backward i, #forward i{
+    font-size: 1.3vw;
     cursor: pointer;
 }
 #play:hover, #backward:hover, #forward:hover {
@@ -146,6 +147,15 @@ figure section article .inner .buttons div {
     height: 100%;     
 }
 
+#music_search i {
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+
+#music_search input {
+    font-size: 1vw;
+}
+
 /* articles */
 #articles {
     height: 80vh;
@@ -177,7 +187,7 @@ figure section article .inner .buttons div {
     box-sizing: border-box;
     background: #ADCDDA;
     border-radius: 6px;
-    height: 40px;
+    height: 3vh;
     width: 30vw;
     display: flex;
     justify-content: center;
@@ -194,6 +204,7 @@ figure section article .inner .buttons div {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
+    font-size: 0.8vw;
 }
 
 #articles #top_wrapper {
@@ -208,8 +219,9 @@ figure section article .inner .buttons div {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
+    font-size: 0.8vw;
     width: 10vw;
-    height: 40px;
+    height: 3vh;
     background: #FFFFFF;
     outline: none;
     text-align: center;
@@ -289,21 +301,21 @@ figure section article .inner .buttons div {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1vw;
 }
 
 #bottom_wrapper .post .span_wrapper .song{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 0.7vw;
     color: #818181;
 }
 /* 버튼 */
 
 figure .btnLeft {
-    width: 60px;
-    height: 60px;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -316,7 +328,7 @@ figure .btnLeft {
 
 figure .btnLeft span {
     font-family: 'Pretendard';
-    font: 11px/1;
+    font: 1.5vw;
     color: #000000;
     opacity: 1;
     transform: translateX(30%);
@@ -365,12 +377,12 @@ figure .btnLeft:hover::after {
 }
 
 figure .btnRight {
-    width: 60px;
-    height: 60px;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(40vw, -50%);
+    transform: translate(35vw, -50%);
     display: flex;
     align-items: center;
     text-align: right;
@@ -379,7 +391,7 @@ figure .btnRight {
 
 figure .btnRight span {
     font-family: 'Pretendard';
-    font: 11px/1;
+    font: 1.2vw;
     color: #000000;
     opacity: 1;
     transform: translateX(-30%);

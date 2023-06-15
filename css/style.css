@@ -43,6 +43,7 @@ article {
 .searchForm i {  
     transform: translateX(-20px);
     cursor: pointer;
+    font-size: 2vw;
 }
 
 .searchField{

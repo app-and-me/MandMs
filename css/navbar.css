@@ -25,6 +25,7 @@ header .navbar-menu ul {
 }
 
 header .navbar-menu ul li{
+    font-size: 1vw;
     float: left;
     margin-left: 3vw;
     font-family: 'Pretendard';

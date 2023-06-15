@@ -61,12 +61,15 @@ article {
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
+    font-size: 1vw;
     border: 1.5px solid #ADADAD;
     border-radius: 100px;
 }
 
 #search_bar form button i {
     cursor: pointer;
+    font-size: 2vw;
+    transform: translateX(-4vw);
 }
 
 /* 검색 결과 */
@@ -108,6 +111,10 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#result_section .result .icons i {
+    font-size: 1.4vw;
 }
 
 .play,
