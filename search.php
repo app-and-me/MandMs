@@ -41,12 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
                     </div>
                     <span class="musicTitle">' . $title . '</span>
                     <div class="icons">
-                        <div class="play" onclick="playAudio(this)">
+                        <button type="button" onclick="playAudio(\'' . $audio . '\')">
                             <i class="fa-solid fa-play fa-xl" style="color: #2b2b2b;"></i>
-                        </div>
-                        <div class="pause" onclick="pauseAudio(this)">
+                        </button>
+                        <button type="button" onclick="pauseAudio(\'' . $audio . '\')">
                             <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
-                        </div>
+                        </button>
                         <a href="write.php?id=' . $id . '" target="_top" class="write">
                             <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                         </a>
