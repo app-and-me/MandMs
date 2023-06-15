@@ -23,6 +23,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // 각 결과의 행을 반복하면서 음악 데이터를 표시하는 HTML 요소를 생성
     while ($row = $result->fetch_assoc()) {
+        $id = $row['id'];
         $title = $row['title'];
         $artist = $row['artist'];
         $audio = $row['file_path'];
@@ -42,7 +43,7 @@ if ($result->num_rows > 0) {
                 <div class="pause">
                     <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                 </div>
-                <a href="#" onclick="sendMusicData(\'' . base64_encode($image) . '\', \'' . $title . '\', \'' . $artist . '\', \'' . $audio . '\')" target="_top" class="write">
+                <a href="write.html?id=' . $id . '" target="_top" class="write">
                     <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                 </a>
             </div>
