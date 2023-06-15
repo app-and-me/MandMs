@@ -48,6 +48,9 @@ if ($result->num_rows > 0) {
                 </a>
             </div>
             <span class="musicSinger">' . $artist . '</span>
+            <audio class="audio-element">
+                <source src="' . $audio . '" type="audio/mpeg">
+            </audio>
         </div>';
 
 

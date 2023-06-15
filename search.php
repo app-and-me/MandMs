@@ -52,6 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
                         </a>
                     </div>
                     <span class="musicSinger">' . $artist . '</span>
+                    <audio class="audio-element">
+                        <source src="' . $audio . '" type="audio/mpeg">
+                    </audio>
                 </div>';
 
             // 검색 결과 섹션에 표시할 HTML 코드를 반환
