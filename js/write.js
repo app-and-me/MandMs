@@ -34,28 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  function sendMusicData(image, title, artist, audio) {
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("artist", artist);
-    formData.append("audio", audio);
   
-    fetch("write.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((response) => {
-        const resultArticle = document.getElementById("result_article");
-        resultArticle.innerHTML = response; // 동적으로 생성된 코드 추가
-  
-        window.location.href = "write.html";
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
   
   
   
