@@ -37,20 +37,17 @@ if ($result->num_rows > 0) {
             </div>
             <span class="musicTitle">' . $title . '</span>
             <div class="icons">
-                <div class="play">
+                <div class="play" onclick="playAudio(this)">
                     <i class="fa-solid fa-play fa-xl" style="color: #2b2b2b;"></i>
                 </div>
-                <div class="pause">
+                <div class="pause" onclick="pauseAudio(this)">
                     <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                 </div>
-                <a href="write.html?id=' . $id . '" target="_top" class="write">
+                <a href="write.php?id=' . $id . '" target="_top" class="write">
                     <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                 </a>
             </div>
             <span class="musicSinger">' . $artist . '</span>
-            
-            <!-- 음악 재생 -->
-            <audio src="' . $audio . '"></audio>
         </div>';
 
 
