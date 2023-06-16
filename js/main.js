@@ -154,12 +154,3 @@ audio.addEventListener("ended", () => {
 
   audio.play();
 });
-
-$(document).ready(function() {
-  $.ajax({
-      url: 'category.php',
-      success: function(data) {
-      $('#post_table_body').html(data);
-      }
-  });
-  });
