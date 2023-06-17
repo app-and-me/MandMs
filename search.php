@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     // MySQL 서버 연결 정보
     $servername = "localhost";
     $username = "root";
-    $password = "1234";
+    $password = "0000";
     $dbname = "mandmz";
 
     // MySQL 서버에 연결
