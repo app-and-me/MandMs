@@ -117,6 +117,17 @@ article {
     font-size: 1.4vw;
 }
 
+#result_section .result .icons button {
+    outline: none;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1vw;
+    cursor: pointer;
+}
+
 .play,
 .pause {
     margin-right: 2vw;
