@@ -25,9 +25,8 @@ if ($result->num_rows > 0) {
     echo "<tr align=center>";
     echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["title"] . "</td>";
-    echo "<td>" . $row["content"] . "</td>";
-    echo "<td>" . $row["emotion"] . "</td>";
     echo "<td>" . $row["music"] . "</td>";
+    echo "<td>" . $row["emotion"] . "</td>";
     echo "</tr>";
   }
 } else {
