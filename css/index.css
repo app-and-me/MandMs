@@ -201,7 +201,7 @@ figure section article .inner .buttons div {
 
 .rank, .music_info {
     color: #FFFFFF;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 500;
     font-size: 0.8vw;
@@ -216,7 +216,7 @@ figure section article .inner .buttons div {
 
 #articles #top_wrapper #emoji_select {
     color: #181818;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 500;
     font-size: 0.8vw;
@@ -231,7 +231,7 @@ figure section article .inner .buttons div {
 
 #articles #top_wrapper #emoji_select option{
     color: #181818;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 500;
     background: #FFFFFF;
@@ -245,14 +245,14 @@ figure section article .inner .buttons div {
 
 #articles .chart_field #rank {
     color: #FFFFFF;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 500;
 }
 
 #articles .chart_field #music_info {
     color: #FFFFFF;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 500;
 }
@@ -298,19 +298,41 @@ figure section article .inner .buttons div {
 }
 
 #bottom_wrapper .post .span_wrapper .title{
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 400;
     font-size: 1vw;
 }
 
 #bottom_wrapper .post .span_wrapper .song{
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 400;
     font-size: 0.7vw;
     color: #818181;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
 /* 버튼 */
 
 figure .btnLeft {
@@ -327,7 +349,7 @@ figure .btnLeft {
 }
 
 figure .btnLeft span {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font: 1.5vw;
     color: #000000;
     opacity: 1;

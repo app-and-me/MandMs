@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @keyframes pan {
   100% {
     background-position: 10% 40%;
@@ -44,7 +51,7 @@ form .musicInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard-Regular';
   font-style: normal;
   font-weight: 500;
   height: 5vh;
@@ -73,14 +80,14 @@ form .musicInfo #musicCover img {
 
 form .musicInfo #musicTitle {
   margin-left: 1vw;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard-Regular';
   font-style: normal;
   font-weight: 200;
   font-size: 1vw;
 }
 
 form textarea, form #title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard-Regular', sans-serif;
   outline: 0;
   background: #FFFFFF;
   width: 100%;
@@ -145,7 +152,7 @@ form #text {
 }
 
 button {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard-Regular', sans-serif;
   text-transform: uppercase;
   outline: 0;
   height: 5vh;

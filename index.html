@@ -103,21 +103,21 @@
 
                     <div id="bottom_wrapper">
                         <!-- db에서 글 목록 불러올 때 여기서부터 -->
-                        <div class="post"> <!-- 원하면 글 게시물마다 아이디 줘도 돼-->
-                            <div class="image">
-                                <img src="img\sugar.jpg" alt="앨범커버">
-                            </div>
-                            <div class="span_wrapper">
-                                <span class="title">
-                                    글 제목
-                                </span>
-                                <span class="song">
-                                    노래 이름
-                                </span>
-                            </div>
+                        <div class="post">
+                          <table>
+                            <tr>
+                              <th>ID</th>
+                              <th>Title</th>
+                              <th>Music</th>
+                              <th>Emotion</th>
+                            </tr>
+                            <tbody id="post_table_body">
+                              <!-- AJAX will populate this tbody -->
+                            </tbody>
+                          </table>
                         </div>
                         <!-- 여기까지 echo로 / img경로, 글 제목, 노래 이름불러오면 돼 -->
-                    </div>
+                      </div>
             </article>
             <article>
                 <div class="inner">
@@ -132,10 +132,23 @@
         </div>
         
         <div class="guide">
-            <a href="guide.html" target="_blank">
-                <i class="fa-regular fa-circle-question fa-2xl" style="color: #adadad;"></i>
+            <a href="introduction.html" target="_blank">
+                <i class="fa-solid fa-info fa-2xl" style="color: #adadad; font-size: 1.8vw;"></i>
             </a>
         </div>
     </figure>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'category.php',
+                success: function(data) {
+                $('#post_table_body').html(data);
+                }
+            });
+            });
+    </script>
 </body>
 </html>
