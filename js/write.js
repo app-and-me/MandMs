@@ -34,20 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function openWritePage(musicId) {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          const writePageHTML = this.responseText;
-          const resultArticle = document.getElementById("result_article");
-          resultArticle.innerHTML = writePageHTML;
-          const emotionInput = document.getElementById("emotion");
-          emotionInput.value = musicId;
-          history.pushState({ page: "write", musicId: musicId }, "Write", `write.php?id=${musicId}`);
-      }
-  };
-  xhttp.open("GET", `write.php?id=${musicId}`, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // 추가된 부분
-  xhttp.send();
+function searchAllMusic() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('result_article').innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("POST", "write.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
 }
+
 

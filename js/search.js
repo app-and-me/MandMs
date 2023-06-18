@@ -25,7 +25,6 @@ function searchAllMusic() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('result_section').innerHTML = this.responseText;
-            addWriteLinkEventListeners(); // write 링크에 이벤트 리스너 추가
         }
     };
     xhttp.open("GET", "searchAll.php", true);
@@ -38,7 +37,6 @@ function searchMusic() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('result_section').innerHTML = this.responseText;
-            addWriteLinkEventListeners(); // write 링크에 이벤트 리스너 추가
         }
     };
     xhttp.open("POST", "search.php", true);
@@ -46,13 +44,15 @@ function searchMusic() {
     xhttp.send("searchQuery=" + searchQuery);
 }
 
-function addWriteLinkEventListeners() {
-    const writeLinks = document.querySelectorAll(".write");
-    writeLinks.forEach(link => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
-            const musicId = link.getAttribute("data-music-id");
-            openWritePage(musicId);
-        });
-    });
+function writeId(id) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "write.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // 전송이 성공했을 때 write.html로 화면 전환
+            window.location.href = "write.html";
+        }
+    };
+    xhr.send("id=" + id);
 }
