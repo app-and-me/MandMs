@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.top-vector {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: -10%;
+    top: 0;
+    background-image: url('../img/introduce/top_vector.svg');
+    background-size: cover;
+    z-index: 2;
+}
+
+.bottom-vector {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+    background-image: url('../img/introduce/bottom_vector.svg');
+    background-size: cover;
+    z-index: 1;
+}
+
+.info {
+    position: absolute;
+    left: 10vw;
+    top: 10vw;
+}

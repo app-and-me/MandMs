@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -57,7 +64,7 @@ article {
     width: 35vw;
     height: 5vh;
     background-color: #FFFFFF;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
@@ -136,7 +143,7 @@ article {
 
 #result_section .result span {
     width: 8vw;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-style: normal;
     font-weight: 400;
     font-size: 1vw;
