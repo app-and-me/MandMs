@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 include_once("connect.php");
 
 if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
@@ -15,13 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         die("MySQL 서버 연결 실패: " . $conn->connect_error);
     }
 
-    // SQL 쿼리 작성
+    // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
     $sql = "SELECT image, title, artist, audio FROM music WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
 
-    $result = $stmt->get_result();
+    // 쿼리를 실행하고 결과를 가져옴
+    $result = $conn->query($sql);
+
+    
     if ($result->num_rows > 0) {
         // 검색된 데이터를 가져와서 사용
         $row = $result->fetch_assoc();
@@ -74,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         echo $musicwrite;
     } else {
         echo "해당 ID의 데이터를 찾을 수 없습니다.";
+       
     }
 
     $stmt->close();
