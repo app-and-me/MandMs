@@ -2,7 +2,7 @@
 // 데이터베이스 연결 설정
 $servername = "localhost"; // 데이터베이스 서버 주소
 $username = "root"; // 데이터베이스 사용자 이름
-$password = "0000"; // 데이터베이스 비밀번호
+$password = "1234"; // 데이터베이스 비밀번호
 $dbname = "mandmz"; // 데이터베이스 이름
 
 // 데이터베이스 연결 생성

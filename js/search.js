@@ -16,10 +16,6 @@ function pauseAudio(music_path) {
     }
 }
 
-window.onload = function() {
-    searchAllMusic();
-}
-
 function searchAllMusic() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

@@ -16,11 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     }
 
     // SQL 쿼리 작성
-    $sql = "SELECT image, title, artist, audio FROM music WHERE id = $id";
+    $sql = "SELECT image, title, artist, audio FROM music WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
 
-    // 쿼리 실행
-    $result = $conn->query($sql);
-
+    $result = $stmt->get_result();
     if ($result->num_rows > 0) {
         // 검색된 데이터를 가져와서 사용
         $row = $result->fetch_assoc();
@@ -67,12 +68,14 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         <button id="end">끝내기</button>
         <!-- 음악 재생 -->
         <audio src="' . $audio . '" autoplay loop></audio>';
-        
+
 
         // 동적으로 추가할 HTML 코드 반환
         echo $musicwrite;
     } else {
         echo "해당 ID의 데이터를 찾을 수 없습니다.";
     }
+
+    $stmt->close();
+    $conn->close();
 }
-?>

@@ -4,7 +4,7 @@ include_once("connect.php");
 // MySQL 서버 연결 정보
 $servername = "localhost";
 $username = "root";
-$password = "0000";
+$password = "1234";
 $dbname = "mandmz";
 
 // MySQL 서버에 연결
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
                     <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                 </button>
                 <button type="button" onclick="writeId(\'' . $id . '\')" target="_top" class="write">
-                <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
+                    <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
                 </button>            
             </div>
             <span class="musicSinger">' . $artist . '</span>

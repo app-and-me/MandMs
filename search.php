@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     // MySQL 서버 연결 정보
     $servername = "localhost";
     $username = "root";
-    $password = "0000";
+    $password = "1234";
     $dbname = "mandmz";
 
     // MySQL 서버에 연결
@@ -47,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
                         <button type="button" onclick="pauseAudio(\'' . $audio . '\')">
                             <i class="fa-solid fa-pause fa-xl" style="color: #2b2b2b;"></i>
                         </button>
-                        <a href="write.php?id=' . $id . '" target="_top" class="write">
+                        <button type="button" onclick="writeId(\'' . $id . '\')" target="_top" class="write">
                             <i class="fa-regular fa-pen-to-square fa-xl" style="color: #2b2b2b;"></i>
-                        </a>
+                        </button> 
                     </div>
                     <span class="musicSinger">' . $artist . '</span>
                     <audio class="audio-element">
