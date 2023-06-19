@@ -28,16 +28,17 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     if ($result->num_rows > 0) {
         // 검색된 데이터를 가져와서 사용
         $row = $result->fetch_assoc();
-        $image = $row['image'];
         $title = $row['title'];
         $artist = $row['artist'];
-        $audio = $row['audio'];
+        $image = $row['album'];
+        $audio = $row['file_path'];
+
 
         // 동적으로 추가할 HTML 코드 생성
         $musicwrite = '
         <div class="musicInfo">
             <div id="musicCover">
-                <img id="image" src="' . $image . '" alt="">
+                <img id="image" src="' . base64_encode($image) . '" alt="">
             </div>
             <span id="musicTitle">' . $title . ' - ' . $artist . '</span>
         </div>
@@ -80,6 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
        
     }
 
-    $stmt->close();
     $conn->close();
 }
+?>
