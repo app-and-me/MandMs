@@ -40,7 +40,9 @@ function searchMusic() {
     xhttp.send("searchQuery=" + searchQuery);
 }
 
+
 function writeId(id) {
+    // write.php로 데이터 전송하기
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "write.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -50,5 +52,11 @@ function writeId(id) {
             window.location.href = "write.html";
         }
     };
-    xhr.send("id=" + id);
+
+    var data = "id=" + encodeURIComponent(id);
+    xhr.send(data);
 }
+
+
+
+
