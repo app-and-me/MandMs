@@ -18,11 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         die("MySQL 서버 연결 실패: " . $conn->connect_error);
     }
 
-    // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
-    $sql = "SELECT album, title, artist, file_path FROM music WHERE id = ?";
-
-    // 쿼리를 실행하고 결과를 가져옴
-    $result = $conn->query($sql);
+     // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
+     $sql = "SELECT album, title, artist, file_path FROM music WHERE id = ?";
+     $stmt = $conn->prepare($sql);
+     $stmt->bind_param("i", $id);
+     $stmt->execute();
+     $result = $stmt->get_result();
 
     
     if ($result->num_rows > 0) {
@@ -81,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
        
     }
 
-
+ 
     $conn->close();
 }
 ?>
