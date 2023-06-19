@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     }
 
     // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
-    $sql = "SELECT image, title, artist, audio FROM music WHERE id = '$id'";
+    $sql = "SELECT album, title, artist, file_path FROM music WHERE id = ?";
 
     // 쿼리를 실행하고 결과를 가져옴
     $result = $conn->query($sql);
@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         $row = $result->fetch_assoc();
         $title = $row['title'];
         $artist = $row['artist'];
-        $image = $row['image'];
-        $audio = $row['audio'];
+        $image = $row['album'];
+        $audio = $row['file_path'];
 
 
         // 동적으로 추가할 HTML 코드 생성
@@ -80,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
         echo "해당 ID의 데이터를 찾을 수 없습니다.";
        
     }
+
 
     $conn->close();
 }
