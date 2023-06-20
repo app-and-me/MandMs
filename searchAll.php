@@ -1,5 +1,4 @@
 <?php
-include_once("connect.php");
 
 // MySQL 서버 연결 정보
 $servername = "localhost";
