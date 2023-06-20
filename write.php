@@ -2,13 +2,14 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
-
+        
+        // MySQL 서버 연결 정보
         $servername = "localhost";
         $username = "root";
         $password = "1234";
         $dbname = "mandmz";
 
-        // 데이터베이스 연결
+        // MySQL 서버에 연결
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("MySQL 서버 연결 실패: " . $conn->connect_error);
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // 동적으로 추가할 HTML 코드 생성
             $musicwrite = '
             <form id="wirteForm">
-                    <div class="musicInfo">
+                <div class="musicInfo">
                     <div id="musicCover">
                         <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
                     </div>
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <input type="hidden" id="emotion" name="emotion" value="">
                 </section>
-                <input type="text" placeholder="내용을 입력하시오" id="write_content" name="write_content"/>
+                <textarea placeholder="내용을 입력하시오" cols="30" id="write_content" name="write_content"> </textarea>
                 <button id="end">끝내기</button>
             </form>
             <!-- 음악 재생 -->
@@ -83,4 +84,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
