@@ -43,23 +43,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" placeholder="제목을 입력하시오" id="write_title" name="write_title"/>
                     <div class="emoji_radio">
                         <label for="emoji1">
-                            <input type="radio" id="emoji1" name="emoji" value="1">
+                            <input type="radio" id="emoji1" name="emoji" value="1" onclick="setEmotionValue(this.value)">
                             <img src="img/emoji1.svg" alt="">
                         </label>
                         <label for="emoji2">
-                            <input type="radio" id="emoji2" name="emoji" value="2">
+                            <input type="radio" id="emoji2" name="emoji" value="2" onclick="setEmotionValue(this.value)">
                             <img src="img/emoji2.svg" alt="">
                         </label>
                         <label for="emoji3">
-                            <input type="radio" id="emoji3" name="emoji" value="3">
+                            <input type="radio" id="emoji3" name="emoji" value="3" onclick="setEmotionValue(this.value)">
                             <img src="img/emoji3.svg" alt="">
                         </label>
                         <label for="emoji4">
-                            <input type="radio" id="emoji4" name="emoji" value="4">
+                            <input type="radio" id="emoji4" name="emoji" value="4" onclick="setEmotionValue(this.value)">
                             <img src="img/emoji4.svg" alt="">
                         </label>
                         <label for="emoji5">
-                            <input type="radio" id="emoji5" name="emoji" value="5">
+                            <input type="radio" id="emoji5" name="emoji" value="5" onclick="setEmotionValue(this.value)">
                             <img src="img/emoji5.svg" alt="">
                         </label>
                     </div>
