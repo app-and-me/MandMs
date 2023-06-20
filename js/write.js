@@ -50,25 +50,27 @@ function write_php(id) {
 // write_php 함수 호출
 write_php(id);
 
-// "끝내기" 버튼 클릭 시 호출되는 함수
-document.addEventListener("DOMContentLoaded", () => {
-    const endButton = document.getElementById("end");
-    if (endButton) {
-        endButton.addEventListener("click", () => {
-            var selectedEmoji = document.querySelector('input[name="emoji"]:checked');
-            if (selectedEmoji) {
-                // 선택된 라디오 버튼의 값을 가져와서 $_POST['emotion']에 할당
-                document.getElementById("emotion").value = selectedEmoji.value;
-                sendMusicData(); // Ajax 요청 함수 호출
-            } else {
-                alert("감정을 선택해주세요.");
-            }
-        });
-    }
-});
-  
-  
-  
+function saveData() {
+    // 입력된 값 가져오기
+    var write_title = document.getElementById("write_title").value;
+    var write_content = document.getElementById("write_content").value;
+    var emotion = document.getElementById("emotion").value;
 
+    // 데이터 전송을 위한 AJAX 요청
+    $.ajax({
+        type: "POST",
+        url: "write.php",
+        data: {
+            write_title: write_title,
+            write_content: write_content,
+            emotion: emotion
+        },
+        success: function(response) {
+            alert(response); // 성공 또는 실패 메시지를 표시
 
+            // postview.html로 리다이렉트하면서 ID 전달
+            window.location.href = "postview.html?id=" + response;
+        }
+    });
+}
 
