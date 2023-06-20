@@ -5,7 +5,36 @@ function setBackground_post() {
     body.style.backgroundImage = `url(img/article_bg/articlebg${num}.svg)`;
 }
 
-const prevPage = document.querySelector("#prev_page");
-prevPage.addEventListener("click", ()=>{
-    window.open("index.html", "_top");
-});
+// const prevPage = document.querySelector("#prev_page");
+// prevPage.addEventListener("click", ()=>{
+//     window.open("index.html", "_top");
+// });
+
+
+// 현재 URL에서 쿼리 파라미터를 가져오기
+const urlParams = new URLSearchParams(window.location.search);
+
+// "id" 쿼리 파라미터의 값 가져오기
+const id = urlParams.get('id');
+
+// id 값 사용하기
+console.log("값 가져왔다 = "+id)
+
+function postview_php(id) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                document.getElementById('inner_content').innerHTML = xhr.responseText;
+            } else {
+                console.log("showpost.php로 id를 보내는 데 실패했습니다.");
+            }
+        }
+    };
+    xhr.open("POST", "showpost.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var data = "id=" + encodeURIComponent(id);
+    xhr.send(data);
+}
+
+postview_php(id);

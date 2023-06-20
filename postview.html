@@ -7,36 +7,28 @@
     <script src="https://kit.fontawesome.com/bf4b3a2bf1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/postview.css">
     <link rel="icon" href="img/icon.ico">
-    <script defer src="js/postview.js"></script>
+    
     <title>MandMs</title>
 </head>
 <body onload="setBackground_post()" style="background-size: cover;">
     <article class="wrap">
-        <div class="inner_content">
-            <!-- 음악 정보 -->
-            <div class="musicInfo">
-                <div id="musicCover">
-                    <img src="img\OMG.jpg" alt="">
-                </div>
-                <span id="musicTitle">ZERO - New Jeans</span>
-            </div> 
-
-            <section>
-                <div id="title">
-                    <span><!-- 제목 불러오기 -->글 제목</span>
-                </div>
-                <div class="emoji_div">
-                    <!-- 저 경로에 숫자 부분만 DB에서 불러오기 -->
-                    <img src="img/emoji2.svg" alt="">
-                </div>
-            </section>
-            <div id="text">
-                <span><!-- 글 내용--></span>
-            </div>
-            <button id="prev_page">이전 페이지로</button> 
-            <!--  음악 재생 -->
-            <audio src="music/omg.mp3" autoplay loop></audio>
+        <div class="inner_content" id="inner_content">
+            <!-- php -->
         </div>
+        <a href="index.html" target="_top"  style="margin-top: -10vh;">
+            <button id="prev_page">이전 페이지로</button> 
+        </a>
     </article>
+    <script src="js/postview.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'postview.php',
+                success: function(data) {
+                $('#inner_content').html(data);
+                }
+            });
+            });
+    </script>
 </body>
 </html>
