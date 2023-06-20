@@ -1,4 +1,4 @@
-function setBackground() {
+function setBackground_post() {
     let num = Math.floor(Math.random() * 5 + 1);
     console.log(num);
     const body = document.querySelector("body");
