@@ -55,6 +55,8 @@ function saveData() {
     var write_title = document.getElementById("write_title").value;
     var write_content = document.getElementById("write_content").value;
     var emotion = document.getElementById("emotion").value;
+    console.log(write_title,write_content,emotion)
+    console.log('데이터 보냈나??')
 
     // 데이터 전송을 위한 AJAX 요청
     $.ajax({
