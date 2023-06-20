@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // 데이터 조회 쿼리
-$sql = "SELECT title, music FROM information";
+$sql = "SELECT title, music  FROM information";
 
 
 // 쿼리 실행 및 결과 가져오기
@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
     $post_list = ' 
     <div class="post"> 
       <div class="image">
-        <img src="img/' . $music_title .' ".jpg" alt="앨범커버">
+        <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
       </div>
       <div class="span_wrapper">
           <span class="title">
