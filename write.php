@@ -1,10 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
-include_once("connect.php");
-
-if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
 
@@ -68,13 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
                 </div>
                 <input type="hidden" id="emotion" name="emotion" value="">
             </section>
-            <input type="text" placeholder="text" id="text" name="text"/>
+            <input type="text" placeholder="내용을 입력하시오" id="text" name="text"/>
             <button id="end">끝내기</button>
             <!-- 음악 재생 -->
             <audio src="' . $audio . '" autoplay loop></audio>';
 
             // 동적으로 추가할 HTML 코드 반환
             echo $musicwrite;
+            $conn->close();
         } else {
             echo "해당 ID의 데이터를 찾을 수 없습니다.";
         }
@@ -85,6 +81,5 @@ if ($_SERVER["REQUEST_METHOD"] ?? '' == "POST") {
     echo "잘못된 요청입니다.";
 }
 
-$conn->close();
 ?>
 
