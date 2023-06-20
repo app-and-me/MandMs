@@ -102,20 +102,7 @@
                     </div>
 
                     <div id="bottom_wrapper">
-                        <!-- db에서 글 목록 불러올 때 여기서부터 -->
-                        <div class="post"> 
-                            <div class="image">
-                                <img src="img\sugar.jpg" alt="앨범커버">
-                            </div>
-                            <div class="span_wrapper">
-                                <span class="title">
-                                    글 제목
-                                </span>
-                                <span class="song">
-                                    노래 이름
-                                </span>
-                            </div>
-                        </div>
+                        <!-- php  -->
                     </div>
             </article>
             <article>
@@ -142,9 +129,9 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: 'category.php',
+                url: 'showAllpost.php',
                 success: function(data) {
-                $('#post_table_body').html(data);
+                $('#bottom_wrapper').html(data);
                 }
             });
             });
