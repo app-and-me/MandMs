@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql_insert_data = "INSERT INTO information (title, content, music_title, artist, album, file_path, emotion)
                     VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt_insert = $conn->prepare($sql_insert_data);
-                $stmt_insert->bind_param("ssssssi", $write_title, $write_content, $music_title, $artist, $image, $audio, $emotion);
+                $stmt_insert->bind_param("sssssss", $write_title, $write_content, $music_title, $artist, $image, $audio, $emotion); 
                 if ($stmt_insert->execute()) {
                     $inserted_id = $stmt_insert->insert_id;
                     echo $inserted_id; // 저장된 열의 ID를 반환합니다.
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "데이터 저장 실패: " . $stmt_insert->error;
                 }
             } else {
-                echo "데이터가 올바르게 전송되지 않았습니다.";
+                echo "write_title, write_content, emotion 데이터가 올바르게 전송되지 않았습니다.";
             }
             
         } else {
