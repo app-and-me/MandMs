@@ -27,11 +27,11 @@ function postview_php(id) {
             if (xhr.status === 200) {
                 document.getElementById('inner_content').innerHTML = xhr.responseText;
             } else {
-                console.log("showpost.php로 id를 보내는 데 실패했습니다.");
+                console.log("postview.php로 id를 보내는 데 실패했습니다.");
             }
         }
     };
-    xhr.open("POST", "showpost.php", true);
+    xhr.open("POST", "postview.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     var data = "id=" + encodeURIComponent(id);
     xhr.send(data);
