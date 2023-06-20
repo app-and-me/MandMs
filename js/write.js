@@ -15,6 +15,8 @@ function setBackground() {
     let num = Math.floor(Math.random() * 5 + 1);
     console.log(num);
     body.style.backgroundImage = `url(img/article_bg/articlebg${num}.svg)`;
+
+    write_result();
 }
 
 // "끝내기" 버튼 클릭 시 호출되는 함수
