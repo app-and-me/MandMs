@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // 데이터 조회 쿼리
-$sql = "SELECT title, music  FROM information";
+$sql = "SELECT music_title, title, album FROM information";
 
 
 // 쿼리 실행 및 결과 가져오기
@@ -23,8 +23,10 @@ $result = $conn->query($sql);
 // 결과 출력
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
-    $music_title = $row['music'];
+    $music_title = $row['music_title'];
     $write_title = $row['title'];
+    $image = $row['album'];
+    
 
     $post_list = ' 
     <div class="post"> 
