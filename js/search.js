@@ -40,22 +40,12 @@ function searchMusic() {
     xhttp.send("searchQuery=" + searchQuery);
 }
 
-
+// 'id'라는 매개변수를 받아서 'id'값을 write.html로 전달하고 페이지 이동
 function writeId(id) {
-    // write.php로 데이터 전송하기
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "write.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // 전송이 성공했을 때 write.html로 화면 전환
-            window.location.href = "write.html";
-        }
-    };
+    window.location.href = 'write.html?id=' + id;
+  }
+  
 
-    var data = "id=" + encodeURIComponent(id);
-    xhr.send(data);
-}
 
 
 
