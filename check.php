@@ -3,8 +3,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 제목과 내용 가져오기
     $title = $_POST['title'];
     $emotion = $_POST['emotion'];
-    $music = $_POST['music'];
     $content = $_POST['text'];
+    $music = $_POST['id'];
+    
+    echo "id 값 받아왔니?? = ".$music;
 
     // MySQL 서버 연결 정보
     $servername = "localhost"; // 서버 이름
