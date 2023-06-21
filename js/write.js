@@ -23,9 +23,6 @@ const urlParams = new URLSearchParams(window.location.search);
 // "id" 쿼리 파라미터의 값 가져오기
 const id = urlParams.get('id');
 
-// id 값 사용하기
-console.log("값 가져왔다 = "+id)
-
 
 //글쓰기 클릭하면 write.html이동 그냥이동AJAX아님
 //write.html에서 id값으로 write.php통해서 다른 데이터 비동기로 가져와서
@@ -55,17 +52,17 @@ function saveData() {
     var write_title = document.getElementById("write_title").value;
     var write_content = document.getElementById("write_content").value;
     var emotion = document.getElementById("emotion").value;
-    console.log(write_title,write_content,emotion)
-    console.log('데이터 보냈나??')
+    console.log(write_title, write_content, emotion)
 
     // 데이터 전송을 위한 AJAX 요청
     $.ajax({
         type: "POST",
-        url: "write.php",
+        url: "save.php",
         data: {
             write_title: write_title,
             write_content: write_content,
-            emotion: emotion
+            emotion: emotion,
+            id: id
         },
         success: function(response) {
             alert(response); // 성공 또는 실패 메시지를 표시
@@ -75,4 +72,5 @@ function saveData() {
         }
     });
 }
+
 
