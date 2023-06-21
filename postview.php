@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $content = $row['content'];
             $emotion = $row['emotion'];
             $music_id = $row['music'];
+            $id = $row['id'];
 
             $music_sql = "SELECT title, artist, album, file_path FROM music WHERE id = ?";
             $music_stmt = $conn->prepare($music_sql);
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $post_view = '
                 <div class="musicInfo">
                         <div id="musicCover">
-                            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                            <img src="img/thumb/th'. $id % 21 .'.jpg" alt="앨범커버">
                         </div>
                         <span id="musicTitle">
                             ' . $music_title . '

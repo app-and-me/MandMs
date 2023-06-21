@@ -26,11 +26,12 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // 결과를 반복하여 출력
+    $th_index = 0;
     while ($row = $result->fetch_assoc()) {
 ?>
 <div class="post" onclick="postId(<?=$row["id"]?>)" style="cursor: pointer;"> 
     <div class="image">
-    <img src="img/article_bg/articlebg<?=$row["music_id"]?>.svg" alt="">
+    <img src="img/thumb/th<?=$th_index++ % 21?>.jpg" alt="">
     </div>
     <div class="span_wrapper">
         <span class="title">

@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         $post_list = ' 
         <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
           <div class="image">
-            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="앨범커버">
+            <img src="img/thumb/th'. $id % 20 +1 .'.jpg" alt="앨범커버">
           </div>
           <div class="span_wrapper">
               <span class="title">
