@@ -27,12 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO information (title, emotion, music, content) VALUES ('$title', '$emotion', '$music', '$content')";
 
     if ($conn->query($sql) === TRUE) {
-        // 글이 성공적으로 업로드되었을 때, postview.html 페이지로 리다이렉트
-        header("Location: postview.html");
+        // 데이터 삽입 성공 후에 새로 생성된 데이터의 id를 가져옵니다.
+        $insertedId = $conn->insert_id;
+        // postview.html 페이지로 리다이렉트할 때 id를 함께 전달합니다.
+        header("Location: postview.html?id=$insertedId");
         exit(); // 리다이렉트 후에 코드 실행 중단
     } else {
         echo "글 업로드 오류: " . $conn->error;
     }
+    
 
     // MySQL 서버 연결 종료
     $conn->close();
