@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // 동적으로 추가할 HTML 코드 생성
             $musicwrite = '
-            <form id="wirteForm" action="check.php" method="post">
+            <form id="writeForm" action="check.php" method="post">
                 <div class="musicInfo">
                     <div id="musicCover">
                         <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </label>
                     </div>
                     <input type="hidden" id="emotion" name="emotion" value="">
+                    <input type="hidden" id="music_id" name="music_id" value="' . $id . '">
                 </section>
                 <textarea placeholder="내용을 입력하시오" cols="30" id="write_content" name="write_content"> </textarea>
                 <button id="end" onclick="saveData()">끝내기</button>
@@ -83,5 +84,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "잘못된 요청입니다.";
 }
-
 ?>

@@ -23,11 +23,6 @@ const urlParams = new URLSearchParams(window.location.search);
 // "id" 쿼리 파라미터의 값 가져오기
 const music_id = urlParams.get('id');
 
-
-
-//글쓰기 클릭하면 write.html이동 그냥이동AJAX아님
-//write.html에서 id값으로 write.php통해서 다른 데이터 비동기로 가져와서
-
 function write_php(id) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -51,11 +46,11 @@ write_php(music_id);
 // "끝내기" 버튼 클릭 시 호출되는 함수
 document.getElementById("end").onclick = function() {
     var selectedEmoji = document.querySelector('input[name="emoji"]:checked');
-   if (selectedEmoji) {
-       // 선택된 라디오 버튼의 값을 가져와서 $_POST['emotion']에 할당
-       document.getElementById("emotion").value = selectedEmoji.value;
-       document.querySelector("form").submit(); // 폼 제출
-   } else {
-       alert("감정을 선택해주세요.");
-   }
+    if (selectedEmoji) {
+        // 선택된 라디오 버튼의 값을 가져와서 $_POST['emotion']에 할당
+        document.getElementById("emotion").value = selectedEmoji.value;
+        document.querySelector("form").submit(); // 폼 제출
+    } else {
+        alert("감정을 선택해주세요.");
+    }
 };
