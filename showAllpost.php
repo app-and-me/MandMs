@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $write_title = $row['title'];
 
     $post_list = ' 
-    <div class="post" onclick="postId('. $id .')"> 
+    <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
       <div class="image">
         <img src="img/article_bg/articlebg1.svg" alt="">
       </div>
