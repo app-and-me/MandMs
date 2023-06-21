@@ -138,14 +138,14 @@ section {
     align-items: center;
 }
 
-button {
+#prev_page {
     font-family: 'Pretendard-Regular';
     text-transform: uppercase;
     outline: 0;
     height: 5vh ;
     background: #FFFFFF;
     width: 50%;
-    transform: translate(50%);
+    transform: translate(50%, -50%);
     border: 0;  
     color: #181818;
     font-size: 1vw;
@@ -153,8 +153,10 @@ button {
     transition: all 0.3 ease;
     cursor: pointer;
     border-radius: 12px;
+    opacity: 0.8;
+    transition: 0.5;
 }
 
-button:hover,.form button:active,.form button:focus {
-    background: #FFFFFF;
+#prev_page:hover{
+    opacity: 1;
 }
