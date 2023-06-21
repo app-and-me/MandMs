@@ -40,5 +40,5 @@ function postview_php(id) {
 postview_php(id);
 
 function postId(id) {
-    window.location.href = 'write.html?id=' + id;
+    window.location.href = 'postview.html?id=' + id;
 }
