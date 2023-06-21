@@ -73,27 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // 동적으로 추가할 HTML 코드 반환
             echo $musicwrite;
-
-            // 데이터베이스에 데이터 저장
-            if (isset($_POST['write_title']) && isset($_POST['write_content']) && isset($_POST['emotion'])) {
-                $write_title = $_POST['write_title'];
-                $write_content = $_POST['write_content'];
-                $emotion = $_POST['emotion'];
-
-                // 데이터베이스에 데이터 삽입
-                $sql_insert_data = "INSERT INTO information (title, content, music_title, artist, album, file_path, emotion)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)";
-                $stmt_insert = $conn->prepare($sql_insert_data);
-                $stmt_insert->bind_param("sssssss", $write_title, $write_content, $music_title, $artist, $image, $audio, $emotion); 
-                if ($stmt_insert->execute()) {
-                    $inserted_id = $stmt_insert->insert_id;
-                    echo $inserted_id; // 저장된 열의 ID를 반환합니다.
-                } else {
-                    echo "데이터 저장 실패: " . $stmt_insert->error;
-                }
-            } else {
-                echo "write_title, write_content, emotion 데이터가 올바르게 전송되지 않았습니다.";
-            }
             
         } else {
             echo "해당 ID의 데이터를 찾을 수 없습니다.";
