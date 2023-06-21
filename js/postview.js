@@ -14,11 +14,11 @@ function setBackground_post() {
 // 현재 URL에서 쿼리 파라미터를 가져오기
 const urlParams = new URLSearchParams(window.location.search);
 
-// // "id" 쿼리 파라미터의 값 가져오기
-// const id = urlParams.get('id');
+// "id" 쿼리 파라미터의 값 가져오기
+const id = urlParams.get('id');
 
-// // id 값 사용하기
-// console.log("값 가져왔다 = "+id)
+// id 값 사용하기
+console.log("값 가져왔다 = "+id)
 
 function postview_php(id) {
     var xhr = new XMLHttpRequest();
