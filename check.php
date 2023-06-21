@@ -4,7 +4,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $emotion = $_POST['emotion'];
     $content = $_POST['text'];
-    $music = $_POST['id'];
+    $music = $_POST['musicid'];
+    //print_r($_POST);
+    //exit();
+
     
     echo "id 값 받아왔니?? = ".$music;
 

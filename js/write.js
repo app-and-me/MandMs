@@ -55,7 +55,8 @@ document.getElementById("end").onclick = function() {
         // 선택된 라디오 버튼의 값을 가져와서 $_POST['emotion']에 할당
         document.getElementById("emotion").value = selectedEmoji.value;
         // id 값을 hidden input에 할당
-        document.getElementById("idHiddenInput").value = id;
+        //alert(id);
+        document.getElementById("musicid").value = id;
         // 폼 제출
         document.getElementById("writeForm").submit();
     } else {
