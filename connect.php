@@ -35,35 +35,15 @@ $sql_create_table = "CREATE TABLE IF NOT EXISTS information (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    music_title VARCHAR(255),
-    artist VARCHAR(255) NOT NULL,
-    album MEDIUMBLOB NOT NULL,
-    file_path VARCHAR(200) NOT NULL,
-    emotion INT
+    music_id INT,
+    emotion VARCHAR(255)
 )";
+
 
 if ($conn->query($sql_create_table) === TRUE) {
     //echo "다이어리 테이블 생성 완료";
 } else {
     echo "다이어리 테이블 생성 실패: " . $conn->error;
-}
-
-
-// 다이어리 예시 데이터 삽입 쿼리
-$sql_insert_data = "INSERT INTO information (title, content, music_title, artist, album, file_path, emotion) VALUES
-    ('제목 1', '내용 1', '1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents("img/1of1.jpg")) . "', 'music/1 of 1.mp3', 1),
-    ('제목 2', '내용 2', 'After LIKE', '아이브', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/After LIKE.mp3', 2),
-    ('제목 3', '내용 3', '마지막처럼', '블랙핑크', '"  . $conn->real_escape_string(file_get_contents("img/마지막처럼.jpg")) . "', 'music/BLACKPINK - 마지막처럼.mp3', 3),
-    ('제목 4', '내용 4', 'toxic', 'Britney Spears', '"  . $conn->real_escape_string(file_get_contents("img/toxic.jpg")) . "', 'music/Britney Spears - Toxic (Official HD Video).mp3', 4),
-    ('제목 5', '내용 5', 'viva la vida', 'coldply', '"  . $conn->real_escape_string(file_get_contents("img/viva la vida.jpg")) . "', 'music/Coldplay - Viva La Vida (한글 가사 해석).mp3', 5),
-    ('제목 6', '내용 6', 'englishman in new york', 'strint', '"  . $conn->real_escape_string(file_get_contents("img/english man in newyork.jpg")) . "', 'music/englishman in new york.mp3', 3),
-    ('제목 7', '내용 7', '삐딱하게', '지드래곤', '"  . $conn->real_escape_string(file_get_contents("img/삐딱하게.jpg")) . "', 'music/G-DRAGON(지드래곤) - 삐딱하게(Crooked) [가사 Lyrics].mp3', 5)";
-
-// 쿼리 실행
-if ($conn->query($sql_insert_data) === TRUE) {
-    echo "예시 데이터가 성공적으로 삽입되었습니다.";
-} else {
-    echo "데이터 삽입 오류: " . $conn->error;
 }
 
 
