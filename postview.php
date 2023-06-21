@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
-        $sql = "SELECT title, emotion, content, music, artist, album, file_path FROM information WHERE id = ?";
+        $sql = "SELECT title, emotion, content FROM information WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -27,19 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $post_title = $row['title'];
             $content = $row['content'];
-            $music = $row['music'];
             $emotion = $row['emotion'];
-            $image = $row['album'];
-            $audio = $row['file_path'];
-            $artist = $row['artist'];
 
             // 동적으로 추가할 HTML 코드 생성
             $post_view = '
             <div class="musicInfo">
                     <div id="musicCover">
-                        <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                        <img src="img/article_bg/articlebg1.svg" style="object-fit: cover;" alt="">
                     </div>
-                    <span id="musicTitle">' . $music_title . ' - ' . $artist . '
+                    <span id="musicTitle">
+                        음악 제목
                     </span>
             </div>
 
@@ -57,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <!--  음악 재생 -->
-            <audio src="' . $audio . '" autoplay loop></audio>';
+            <audio src="omg.mp3" autoplay loop></audio>';
 
             // 동적으로 추가할 HTML 코드 반환
             echo $post_view;
