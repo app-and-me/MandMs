@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <audio src="' . $audio . '" autoplay loop></audio>';
                 
 
-            
 
             // 동적으로 추가할 HTML 코드 반환
             echo $musicwrite;

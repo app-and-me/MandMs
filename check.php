@@ -1,7 +1,4 @@
 <?php
-// connect.php 파일을 그대로 가져옵니다.
-include_once("connect.php");
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 제목과 내용 가져오기
     $title = $_POST['title'];
@@ -31,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "글 업로드 오류: " . $conn->error;
     }
-    
 
     // MySQL 서버 연결 종료
     $conn->close();
