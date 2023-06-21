@@ -67,7 +67,7 @@ $sql_insert_music = "INSERT INTO music (title, artist, album, file_path)
 VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents("img/1of1.jpg")) . "', 'music/1 of 1.mp3'),
        ('After LIKE', '아이브', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/After LIKE.mp3'),
        ('마지막처럼', '블랙핑크', '"  . $conn->real_escape_string(file_get_contents("img/마지막처럼.jpg")) . "', 'music/BLACKPINK - 마지막처럼.mp3'),
-       ('toxic', 'Britney Spears', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/Britney Spears - Toxic (Official HD Video).mp3'),
+       ('toxic', 'Britney Spears', '"  . $conn->real_escape_string(file_get_contents("img/toxic.jpg")) . "', 'music/Britney Spears - Toxic (Official HD Video).mp3'),
        ('viva la vida', 'coldplay', '"  . $conn->real_escape_string(file_get_contents("img/viva la vida.jpg")) . "', 'music/Coldplay - Viva La Vida (한글 가사 해석).mp3'),
        ('double take', 'dhruv', '"  . $conn->real_escape_string(file_get_contents("img/double take.jpg")) . "', 'music/double take.mp3'),
        ('dreams come true', '에스파', '"  . $conn->real_escape_string(file_get_contents("img/Dreams Come True.jpg")) . "', 'music/dreams come true.mp3'),
