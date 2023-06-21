@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // 글이 성공적으로 업로드되었을 때, postview.html 페이지로 리다이렉트
-        header("Location: postview.html");
+        header("Location: index.html");
         exit(); // 리다이렉트 후에 코드 실행 중단
     } else {
         echo "글 업로드 오류: " . $conn->error;
