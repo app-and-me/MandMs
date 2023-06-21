@@ -42,8 +42,3 @@ postview_php(id);
 function postId(id) {
     window.location.href = 'postview.html?id=' + id;
 }
-
-const prevBtn = document.getElementById("prev_page");
-prevBtn.onclick = ()=> {
-    window.open("index.html", "_top");
-};
