@@ -79,12 +79,12 @@ form .musicInfo #musicTitle {
   font-size: 1vw;
 }
 
-form textarea, form #write_title {
+form textarea, form #title {
   font-family: 'Pretendard-Regular';
   outline: 0;
   background: #FFFFFF;
   width: 100%;
-  height: 100%;
+  height: 90%;
   border: 0;
   margin: 0 0 2vh;
   padding: 15px;
@@ -99,7 +99,7 @@ form section {
   justify-content: space-between;
 }
 
-form #write_title {
+form #title {
   width: 50%;
   height: 5vh;
   font-size: 1vw;
@@ -145,7 +145,7 @@ form #write_content {
 }
 
 #end {
-  font-family: 'Pretendard-Regular', sans-serif;
+  font-family: 'Pretendard-Regular';
   text-transform: uppercase;
   outline: 0;
   height: 5vh;
