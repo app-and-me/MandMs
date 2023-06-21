@@ -15,8 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("MySQL 서버 연결 실패: " . $conn->connect_error);
         }
 
-        // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
-        $sql = "SELECT title, emotion, content FROM information WHERE id = ?";
+        $sql = "SELECT title, emotion, content, id FROM information WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -28,36 +27,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $post_title = $row['title'];
             $content = $row['content'];
             $emotion = $row['emotion'];
+            $music_id = $row['id'];
 
-            // 동적으로 추가할 HTML 코드 생성
-            $post_view = '
-            <div class="musicInfo">
-                    <div id="musicCover">
-                        <img src="img/article_bg/articlebg1.svg" style="object-fit: cover;" alt="">
+            $music_sql = "SELECT title, artist, album, file_path FROM information WHERE id = ?";
+            $music_stmt = $conn->prepare($music_sql);
+            $music_stmt->bind_param("i", $music_id);
+            $music_stmt->execute();
+            $music_result = $stmt->get_result();
+
+            if($music_result->num_rows > 0){
+
+                $music_title = $row['title'];
+                $artist = $row['artist'];
+                $image = $row['album'];
+                $audio = $row['file_path'];
+
+                $post_view = '
+                <div class="musicInfo">
+                        <div id="musicCover">
+                            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                        </div>
+                        <span id="musicTitle">
+                            ' . $music_title . '
+                        </span>
+                </div>
+
+                <section>
+                    <div id="title">
+                        <span>' . $post_title . '</span>
                     </div>
-                    <span id="musicTitle">
-                        음악 제목
-                    </span>
-            </div>
+                    <div class="emoji_div">
+                        <img src="img/emoji' . $emotion . '.svg" alt="">
+                    </div>
+                </section>
 
-            <section>
-                <div id="title">
-                    <span>' . $post_title . '</span>
+                <div id="text">
+                    <span>' . $content . '</span>
                 </div>
-                <div class="emoji_div">
-                    <img src="img/emoji' . $emotion . '.svg" alt="">
-                </div>
-            </section>
 
-            <div id="text">
-                <span>' . $content . '</span>
-            </div>
+                <!--  음악 재생 -->
+                <audio src="omg.mp3" autoplay loop></audio>';
 
-            <!--  음악 재생 -->
-            <audio src="omg.mp3" autoplay loop></audio>';
-
-            // 동적으로 추가할 HTML 코드 반환
-            echo $post_view;
+                // 동적으로 추가할 HTML 코드 반환
+                echo $post_view;
+            }else{
+                echo "해당 음악 ID의 데이터를 찾을 수 없습니다.";
+            }
+            
         } else {
             echo "해당 ID의 데이터를 찾을 수 없습니다.";
         }
