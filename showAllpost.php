@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // 데이터 조회 쿼리
-$sql = "SELECT id, title FROM information";
+$sql = "SELECT id, title, music FROM information";
 
 
 // 쿼리 실행 및 결과 가져오기
@@ -25,22 +25,39 @@ if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     $id = $row['id'];
     $write_title = $row['title'];
+    $music_id = $row['music'];
+    
+    $music_sql = "SELECT album, title FROM information WHERE id = ?";
+    $music_stmt = $conn->prepare($music_sql);
+    $music_stmt->bind_param("i", $music_id);
+    $music_stmt->execute();
+    $music_result = $stmt->get_result();
 
-    $post_list = ' 
-    <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
-      <div class="image">
-        <img src="img/article_bg/articlebg1.svg" alt="">
-      </div>
-      <div class="span_wrapper">
-          <span class="title">
-              ' . $write_title . '
-          </span>
-          <span class="song">
-          </span>
-      </div>
-    </div>';
+    if($music_result->num_rows > 0){
 
-    echo $post_list;
+        $image = $row['album'];
+        $music_title = $row['title'];
+
+        $post_list = ' 
+        <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
+          <div class="image">
+            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+          </div>
+          <div class="span_wrapper">
+              <span class="title">
+                  ' . $write_title . '
+              </span>
+              <span class="song">
+                  ' . $write_title . '
+              </span>
+          </div>
+        </div>';
+    
+        echo $post_list;
+    }else{
+
+    }
+    
   }
 } else {
   echo "<span>게시글이 없습니다.</span>";
