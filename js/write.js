@@ -55,36 +55,24 @@ function saveData() {
     console.log(write_title, write_content)
 
     // 데이터 전송을 위한 AJAX 요청
-$.ajax({
-    type: "POST",
-    url: "check.php",
-    data: {
-        write_title: write_title,
-        write_content: write_content,
-        music_id: music_id
-    },
-})
-.done(function(response) {
-    // AJAX 요청이 성공한 경우의 처리 코드
-    console.log(response); // 서버에서 반환한 데이터 출력
-})
-.fail(function(xhr, status, error) {
-    // AJAX 요청이 실패한 경우의 처리 코드
-    console.log("AJAX 요청 실패");
-    console.log(status + ": " + error);
-});
-
-} 
-
-// "끝내기" 버튼 클릭 시 호출되는 함수
-document.getElementById("end").onclick = function() {
-    var selectedEmoji = document.querySelector('input[name="emoji"]:checked');
-   if (selectedEmoji) {
-       // 선택된 라디오 버튼의 값을 가져와서 $_POST['emotion']에 할당
-       document.getElementById("emotion").value = selectedEmoji.value;
-       document.querySelector("form").submit(); // 폼 제출
-   } else {
-       alert("감정을 선택해주세요.");
-   }
-};
+    $.ajax({
+        type: "POST",
+        url: "check.php",
+        data: {
+            write_title: write_title,
+            write_content: write_content,
+            emotion: document.querySelector('input[name="emoji"]:checked').value,
+            music_id: music_id
+        },
+    })
+    .done(function(response) {
+        // AJAX 요청이 성공한 경우의 처리 코드
+        console.log(response); // 서버에서 반환한 데이터 출력
+    })
+    .fail(function(xhr, status, error) {
+        // AJAX 요청이 실패한 경우의 처리 코드
+        console.log("AJAX 요청 실패");
+        console.log(status + ": " + error);
+    });
+}
 
