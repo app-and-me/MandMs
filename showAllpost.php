@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // 데이터 조회 쿼리
-$sql = "SELECT music_title, title, album FROM information";
+$sql = "SELECT id, title FROM information";
 
 
 // 쿼리 실행 및 결과 가져오기
@@ -23,22 +23,19 @@ $result = $conn->query($sql);
 // 결과 출력
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
-    $music_title = $row['music_title'];
+    $id = $row['id'];
     $write_title = $row['title'];
-    $image = $row['album'];
-    
 
     $post_list = ' 
-    <div class="post"> 
+    <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
       <div class="image">
-        <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+        <img src="img/article_bg/articlebg1.svg" alt="">
       </div>
       <div class="span_wrapper">
           <span class="title">
               ' . $write_title . '
           </span>
           <span class="song">
-              ' . $music_title . '
           </span>
       </div>
     </div>';
