@@ -36,17 +36,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $music_stmt->execute();
             $music_result = $music_stmt->get_result();
 
-            if($music_result->num_rows > 0){
-
-                $music_title = $row['title'];
-                $artist = $row['artist'];
-                $image = $row['album'];
-                $audio = $row['file_path'];
+            // music data
+            if ($music_result->num_rows > 0) {
+                $music_row = $music_result->fetch_assoc();
+                $music_title = $music_row['title'];
+                $artist = $music_row['artist'];
+                $image = $music_row['album'];
+                $audio = $music_row['file_path'];
 
                 $post_view = '
                 <div class="musicInfo">
                         <div id="musicCover">
-                            <img src="img/thumb/th'. $id % 21 .'.jpg" alt="앨범커버">
+                            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
                         </div>
                         <span id="musicTitle">
                             ' . $music_title . '
