@@ -23,14 +23,14 @@ function setBackground() {
 const urlParams = new URLSearchParams(window.location.search);
 
 // "id" 쿼리 파라미터의 값 가져오기
-const music_id = urlParams.get('id');
+const id = urlParams.get('id');
 
 function write_php(id) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                document.getElementById('result_article').innerHTML = xhr.responseText;
+                document.getElementById('music_info').innerHTML = xhr.responseText;
             } else {
                 console.log("write.php로 id를 보내는 데 실패했습니다.");
             }
@@ -43,7 +43,8 @@ function write_php(id) {
 }
 
 // write_php 함수 호출
-write_php(music_id);
+write_php(id);
+
 
 // "끝내기" 버튼 클릭 시 호출되는 함수
 document.getElementById("end").onclick = function() {
@@ -56,3 +57,5 @@ document.getElementById("end").onclick = function() {
        alert("감정을 선택해주세요.");
    }
 };
+
+
