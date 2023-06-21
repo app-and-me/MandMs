@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
-        
+
         // MySQL 서버 연결 정보
         $servername = "localhost";
         $username = "root";
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("MySQL 서버 연결 실패: " . $conn->connect_error);
         }
 
-        $sql = "SELECT title, emotion, content, id FROM information WHERE id = ?";
+        $sql = "SELECT title, emotion, content, id, music FROM information WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -27,13 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $post_title = $row['title'];
             $content = $row['content'];
             $emotion = $row['emotion'];
-            $music_id = $row['id'];
+            $music_id = $row['music'];
+            $id = $row['id'];
 
-            $music_sql = "SELECT title, artist, album, file_path FROM information WHERE id = ?";
+            $music_sql = "SELECT title, artist, album, file_path FROM music WHERE id = ?";
             $music_stmt = $conn->prepare($music_sql);
             $music_stmt->bind_param("i", $music_id);
             $music_stmt->execute();
-            $music_result = $stmt->get_result();
+            $music_result = $music_stmt->get_result();
 
             if($music_result->num_rows > 0){
 
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $post_view = '
                 <div class="musicInfo">
                         <div id="musicCover">
-                            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                            <img src="img/thumb/th'. $id % 21 .'.jpg" alt="앨범커버">
                         </div>
                         <span id="musicTitle">
                             ' . $music_title . '
@@ -66,12 +67,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <!--  음악 재생 -->
-                <audio src="omg.mp3" autoplay loop></audio>';
+                <audio src="' . $audio . '" autoplay loop></audio>';
 
                 // 동적으로 추가할 HTML 코드 반환
                 echo $post_view;
             }else{
-                echo "해당 음악 ID의 데이터를 찾을 수 없습니다.";
+                echo "해당 음악 ID의 데이터를 찾을 수 없습니다." . $music_id. "";
             }
             
         } else {
