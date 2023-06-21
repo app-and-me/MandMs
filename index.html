@@ -72,15 +72,15 @@
                         </div>
                         <select id="emoji_select">
                             <option value="all">전체</option>
-                            <option value="joy" data-image="img\emoji1.svg">즐거움</option>
-                            <option value="love" data-image="img\emoji1.svg">사랑에빠진</option>
-                            <option value="soso" data-image="img\emoji1.svg">보통</option>
-                            <option value="sad" data-image="img\emoji1.svg">슬픔</option>
-                            <option value="dead" data-image="img\emoji1.svg">죽음</option>
+                            <option value="1" data-image="img\emoji1.svg">즐거움</option>
+                            <option value="2" data-image="img\emoji1.svg">사랑에빠진</option>
+                            <option value="3" data-image="img\emoji1.svg">보통</option>
+                            <option value="4" data-image="img\emoji1.svg">슬픔</option>
+                            <option value="5" data-image="img\emoji1.svg">죽음</option>
                         </select>
                     </div>
 
-                    <div id="bottom_wrapper" onload="showAllpost()">
+                    <div id="bottom_wrapper">
                         <!-- php  -->
                     </div>
             </article>
@@ -105,7 +105,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/showAllPost.js"></script>
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -116,7 +115,7 @@
             });
             });
     </script>
-    <!-- <script>
+    <script>
         $(document).ready(function() {
             $.ajax({
                 url: 'rank.php',
@@ -125,7 +124,31 @@
                 }
             });
             });
-    </script> -->
-    <script src="js/postview.js"></script>
+    </script>
+<script>
+
+var getPosts = function() {
+    var selectedEmotion = this.value; // 선택한 감정 값
+    if(selectedEmotion == undefined){
+        selectedEmotion = 'all';
+    }
+
+    // AJAX 요청
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "get_posts.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // 서버에서 받은 결과를 화면에 출력
+            document.getElementById("bottom_wrapper").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send("emotion=" + selectedEmotion);
+    //alert(selectedEmotion);
+}
+// 감정 선택 시 이벤트 처리
+document.getElementById("emoji_select").addEventListener("change", getPosts);
+
+</script>
 </body>
 </html>
