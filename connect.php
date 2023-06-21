@@ -180,7 +180,7 @@ VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents
        ('로맨틱 선데이', '카더가든', '"  . $conn->real_escape_string(file_get_contents("img/로맨틱 선데이.png")) . "', 'music/카더가든(Car the garden) - 로맨틱 선데이 (Romantic Sunday) (갯마을 차차차 OST) Hometown Cha-Cha-Cha OST Part 1.mp3'),
        ('와르르', '콜드', '"  . $conn->real_escape_string(file_get_contents("img/와르르.png")) . "', 'music/콜드 (Colde) - 와르르 ♥   가사.mp3'),
        ('뜨거운 안녕', '토이', '"  . $conn->real_escape_string(file_get_contents("img/뜨거운 안녕.png")) . "', 'music/토이(Toy)   뜨거운 안녕 (가사 첨부).mp3'),
-       ('누드', '여자아이들', '"  . $conn->real_escape_string(file_get_contents("img/누드.jpg")) . "', 'music/(G)I-DLE Nxde Lyrics ((여자)아이들 Nxde 가사) (Color Coded Lyrics).mp3')";
+       ('누드', '여자아이들', '"  . $conn->real_escape_string(file_get_contents("img/누드.png")) . "', 'music/(G)I-DLE Nxde Lyrics ((여자)아이들 Nxde 가사) (Color Coded Lyrics).mp3')";
 if ($conn->query($sql_insert_music) === TRUE) {
     echo "데이터 삽입 완료";
 } else {
