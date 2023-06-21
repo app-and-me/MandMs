@@ -32,45 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // 동적으로 추가할 HTML 코드 생성
             $musicwrite = '
-            <form id="writeForm" action="check.php" method="post">
-                <div class="musicInfo">
                     <div id="musicCover">
                         <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
                     </div>
                     <span id="musicTitle">' . $music_title . ' - ' . $artist . '</span>
-                </div>
-                <section>
-                    <input type="text" placeholder="제목을 입력하시오" id="write_title" name="write_title"/>
-                    <div class="emoji_radio">
-                        <label for="emoji1">
-                            <input type="radio" id="emoji1" name="emoji" value="1">
-                            <img src="img/emoji1.svg" alt="">
-                        </label>
-                        <label for="emoji2">
-                            <input type="radio" id="emoji2" name="emoji" value="2">
-                            <img src="img/emoji2.svg" alt="">
-                        </label>
-                        <label for="emoji3">
-                            <input type="radio" id="emoji3" name="emoji" value="3">
-                            <img src="img/emoji3.svg" alt="">
-                        </label>
-                        <label for="emoji4">
-                            <input type="radio" id="emoji4" name="emoji" value="4" >
-                            <img src="img/emoji4.svg" alt="">
-                        </label>
-                        <label for="emoji5">
-                            <input type="radio" id="emoji5" name="emoji" value="5">
-                            <img src="img/emoji5.svg" alt="">
-                        </label>
-                    </div>
-                    <input type="hidden" id="emotion" name="emotion" value="">
-                    <input type="hidden" id="music_id" name="music_id" value="' . $id . '">
-                </section>
-                <textarea placeholder="내용을 입력하시오" cols="30" id="write_content" name="write_content"> </textarea>
-                <button id="end" onclick="saveData()">끝내기</button>
-            </form>
-            <!-- 음악 재생 -->
-            <audio src="' . $audio . '" autoplay loop></audio>';
+                    <audio src="' . $audio . '" autoplay loop></audio>';
+                
+
+            
 
             // 동적으로 추가할 HTML 코드 반환
             echo $musicwrite;

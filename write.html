@@ -5,18 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bf4b3a2bf1.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="icon" href="img/icon.ico">
-    
     <link rel="stylesheet" href="css/write.css">
-
+    <link rel="icon" href="img/icon.ico">
+    <script defer src="js/write.js"></script>
     <title>MandMs</title>
 </head>
-<body onload="setBackground()" style="background-size: 120%;">
-    <article class="wrap" id="result_article">
-        
+<body onload="setBackground()" style="background-size: cover;">
+    <article class="wrap">
+        <form id="wirteForm" action="check.php" method="post">
+            <div class="musicInfo">
+                
+            </div>
+            <section>
+                <input type="text" placeholder="제목을 입력하시오" id="title" name="title"/>
+                <div class="emoji_radio">
+                    <label for="emoji1">
+                        <input type="radio" id="emoji1" name="emoji" value="1">
+                        <img src="img/emoji1.svg" alt="">
+                    </label>
+                    <label for="emoji2">
+                        <input type="radio" id="emoji2" name="emoji" value="2">
+                        <img src="img/emoji2.svg" alt="">
+                    </label>
+                    <label for="emoji3">
+                        <input type="radio" id="emoji3" name="emoji" value="3">
+                        <img src="img/emoji3.svg" alt="">
+                    </label>
+                    <label for="emoji4">
+                        <input type="radio" id="emoji4" name="emoji" value="4">
+                        <img src="img/emoji4.svg" alt="">
+                    </label>
+                    <label for="emoji5">
+                        <input type="radio" id="emoji5" name="emoji" value="5">
+                        <img src="img/emoji5.svg" alt="">
+                    </label>
+                </div>
+                <input type="hidden" id="emotion" name="emotion" value="">
+            </section>
+            <textarea placeholder="내용을 입력하시오" cols="30" id="text" name="text"> </textarea>
+            <button id="end">끝내기</button>
+        </form>
+        <!-- 음악 재생 -->
+        <audio src="music/omg.mp3" autoplay loop></audio>
     </article>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/write.js"></script>
 </body>
 </html>

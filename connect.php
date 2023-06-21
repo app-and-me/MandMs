@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 // 데이터베이스 삭제 쿼리
 $sql_drop_db = "DROP DATABASE IF EXISTS `$dbname`";
 if ($conn->query($sql_drop_db) === TRUE) {
-    //echo "데이터베이스 삭제 완료";
+    echo "데이터베이스 삭제 완료";
 } else {
     echo "데이터베이스 삭제 실패: " . $conn->error;
 }
@@ -22,7 +22,7 @@ if ($conn->query($sql_drop_db) === TRUE) {
 // 데이터베이스 생성 쿼리
 $sql_create_db = "CREATE DATABASE IF NOT EXISTS `$dbname`";
 if ($conn->query($sql_create_db) === TRUE) {
-    //echo "데이터베이스 생성 완료";
+    echo "데이터베이스 생성 완료";
 } else {
     echo "데이터베이스 생성 실패: " . $conn->error;
 }
@@ -35,17 +35,15 @@ $sql_create_table = "CREATE TABLE IF NOT EXISTS information (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    music_id INT,
+    music VARCHAR(255),
     emotion VARCHAR(255)
 )";
 
-
 if ($conn->query($sql_create_table) === TRUE) {
-    //echo "다이어리 테이블 생성 완료";
+    echo "다이어리 테이블 생성 완료";
 } else {
     echo "다이어리 테이블 생성 실패: " . $conn->error;
 }
-
 
 // 음악 테이블 생성 쿼리
 $sql_create_music_table = "CREATE TABLE IF NOT EXISTS music (
@@ -58,7 +56,7 @@ $sql_create_music_table = "CREATE TABLE IF NOT EXISTS music (
 )";
 
 if ($conn->query($sql_create_music_table) === TRUE) {
-    //echo "음악 테이블 생성 완료";
+    echo "음악 테이블 생성 완료";
 } else {
     echo "음악 테이블 생성 실패: " . $conn->error;
 }
@@ -67,9 +65,9 @@ if ($conn->query($sql_create_music_table) === TRUE) {
 // 음악 데이터 삽입 쿼리
 $sql_insert_music = "INSERT INTO music (title, artist, album, file_path)
 VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents("img/1of1.jpg")) . "', 'music/1 of 1.mp3'),
-       ('After LIKE', '아이브', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/After LIKE.mp3'),
+       ('After LIKE', '아이브', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/1 of 1.mp3'),
        ('마지막처럼', '블랙핑크', '"  . $conn->real_escape_string(file_get_contents("img/마지막처럼.jpg")) . "', 'music/BLACKPINK - 마지막처럼.mp3'),
-       ('toxic', 'Britney Spears', '"  . $conn->real_escape_string(file_get_contents("img/toxic.jpg")) . "', 'music/Britney Spears - Toxic (Official HD Video).mp3'),
+       ('toxic', 'Britney Spears', '"  . $conn->real_escape_string(file_get_contents("img/afterlike.jpg")) . "', 'music/Britney Spears - Toxic (Official HD Video).mp3'),
        ('viva la vida', 'coldplay', '"  . $conn->real_escape_string(file_get_contents("img/viva la vida.jpg")) . "', 'music/Coldplay - Viva La Vida (한글 가사 해석).mp3'),
        ('double take', 'dhruv', '"  . $conn->real_escape_string(file_get_contents("img/double take.jpg")) . "', 'music/double take.mp3'),
        ('dreams come true', '에스파', '"  . $conn->real_escape_string(file_get_contents("img/Dreams Come True.jpg")) . "', 'music/dreams come true.mp3'),
@@ -95,14 +93,14 @@ VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents
        ('비트박스', 'nct dream', '"  . $conn->real_escape_string(file_get_contents("img/beatbox.jpg")) . "', 'music/NCT DREAM 엔시티 드림 Beatbox (English Ver.) Lyric Video.mp3'),
        ('MUST HAVE LOVE', 'SG 워너비 와 브라운 아이드 걸스', '"  . $conn->real_escape_string(file_get_contents("img/MUST HAVE LOVE.jpg")) . "', 'music/MUST HAVE LOVE.mp3'),
        ('bad girl good girl', '미쓰에이', '"  . $conn->real_escape_string(file_get_contents("img/bad girl.jpg")) . "', 'music/Miss A (미쓰에이) - Bad Girl Good Girl   Color Coded Han Rom Eng Lyrics (가사).mp3'),
-       ('making a lover', 'ss501', '"  . $conn->real_escape_string(file_get_contents("img/애인만들기.jpg")) . "', 'music/MAKING A LOVER - 꽃보다 남자 OST.mp3'),
+       ('MAKING A LOVer', 'ss501', '"  . $conn->real_escape_string(file_get_contents("img/애인만들기.jpg")) . "', 'music/MAKING A LOVER - 꽃보다 남자 OST.mp3'),
        ('cookies', '뉴진스', '"  . $conn->real_escape_string(file_get_contents("img/cookie.jpg")) . "', 'music/NewJeans (뉴진스) - Cookie Audio.mp3'),
        ('ditto', '뉴진스', '"  . $conn->real_escape_string(file_get_contents("img/ditto.jpg")) . "', 'music/NewJeans (뉴진스) - Ditto Audio.mp3'),
        ('attention', '뉴진스', '"  . $conn->real_escape_string(file_get_contents("img/attention.jpg")) . "', 'music/NewJeans Attention Lyrics (뉴진스 Attention 가사) (Color Coded Lyrics).mp3'),
        ('잔소리', '아이유', '"  . $conn->real_escape_string(file_get_contents("img/잔소리.jpg")) . "', 'music/Nitpicking (잔소리 (with 2AM 슬옹)).mp3'),
        ('nothin on you', '브루노마스', '"  . $conn->real_escape_string(file_get_contents("img/nothin on you.jpg")) . "', 'music/nothin on you.mp3'),
        ('omg', '뉴진스', '"  . $conn->real_escape_string(file_get_contents("img/omg.jpg")) . "', 'music/omg.mp3'),
-       ('아주 나이스', '세븐틴', '"  . $conn->real_escape_string(file_get_contents("img/아주나이스.jpg")) . "', 'music/SEVENTEEN [세븐틴] - Very NICE [아주 NICE] (Color Coded Lyrics   Han Rom Eng).mp3'),
+       ('아주나이스', '세븐틴', '"  . $conn->real_escape_string(file_get_contents("img/아주나이스.jpg")) . "', 'music/SEVENTEEN [세븐틴] - Very NICE [아주 NICE] (Color Coded Lyrics   Han Rom Eng).mp3'),
        ('예쁘다', '세븐틴', '"  . $conn->real_escape_string(file_get_contents("img/예쁘다.jpg")) . "', 'music/SEVENTEEN [세븐틴] - Pretty U [예쁘다] (Color Coded Lyrics   Han Rom Eng).mp3'),
        ('레옹', '박명수&아이유', '"  . $conn->real_escape_string(file_get_contents("img/레옹.jpg")) . "', 'music/Park Myung Soo, IU - Leon Lyrics (박명수, 아이유 - 레옹 가사) [Color Coded Lyrics Han Rom Eng].mp3'),
        ('oh pretty woman', 'roy orbison', '"  . $conn->real_escape_string(file_get_contents("img/pretty woman.jpg")) . "', 'music/Pretty Woman (귀여운 여인) OST - Oh Pretty Woman (Lyrics 해석).mp3'),
@@ -140,7 +138,7 @@ VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents
        ('우리의 꿈', '코요태', '"  . $conn->real_escape_string(file_get_contents("img/우리의 꿈.jpg")) . "', 'music/코요태 - 우리의 꿈 가사 (Lyrics).mp3')";
 
 if ($conn->query($sql_insert_music) === TRUE) {
-    //echo "데이터 삽입 완료";
+    echo "데이터 삽입 완료";
 } else {
     echo "데이터 삽입 실패: " . $conn->error;
 }
