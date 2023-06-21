@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 제목과 내용 가져오기
     $write_title = $_POST['write_title'];
-    $write_content = $_POST['write_text'];
+    $write_content = $_POST['write_content'];
     $emotion = $_POST['emotion'];
     $music_id = $_POST['music_id'];
 
@@ -21,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // id를 기반으로 음악 데이터를 가져오는 SQL 쿼리
     $sql_select_music = "SELECT album, title, artist, file_path FROM music WHERE music_id = ?";
     $stmt_select_music = $conn->prepare($sql_select_music);
-    $stmt_select_music->bind_param("i", $id);
+    $stmt_select_music->bind_param("i", $music_id);
     $stmt_select_music->execute();
-    $result_music = $stmt_select_music->get_result();
+    $result_music = $stmt_select_music->get_result();    
 
     if ($result_music->num_rows > 0) {
         // 검색된 데이터를 가져와서 사용
@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $audio = $row_music['file_path'];
 
         // 데이터 삽입 쿼리
-        $sql_insert_data = "INSERT INTO information (title, content, music_title, artist, album, file_path, emotion) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql_insert_data = "INSERT INTO information (title, content, music_title, artist, album, file_path, emotion) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt_insert_data = $conn->prepare($sql_insert_data);
-        $stmt_insert_data->bind_param("ssssssss", $write_title, $write_content, $music_title, $artist, $image, $audio, $emotion);
+        $stmt_insert_data->bind_param("sssssss", $write_title, $write_content, $music_title, $artist, $image, $audio, $emotion);
 
         if ($stmt_insert_data->execute()) {
             $inserted_id = $stmt_insert_data->insert_id;
