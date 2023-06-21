@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // 동적으로 추가할 HTML 코드 생성
             $musicwrite = '
-            <form id="wirteForm">
+            <form id="wirteForm" action="check.php" method="post">
                 <div class="musicInfo">
                     <div id="musicCover">
                         <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
