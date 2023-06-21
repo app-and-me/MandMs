@@ -33,18 +33,18 @@ if ($result->num_rows > 0) {
 
       $id = $row['id'];
       $write_title = $row['title'];
-      $music_id = $row['music'];
+      // $music_id = $row['music'];
 
-      $music_sql = "SELECT title, album FROM music WHERE id = ?";
-      $music_stmt = $conn->prepare($music_sql);
-      $music_stmt->bind_param("i", $music_id);
-      $music_stmt->execute();
-      $music_result = $music_stmt->get_result();
+      // $music_sql = "SELECT title, album FROM music WHERE id = ?";
+      // $music_stmt = $conn->prepare($music_sql);
+      // $music_stmt->bind_param("i", $music_id);
+      // $music_stmt->execute();
+      // $music_result = $music_stmt->get_result();
 
-      if($music_result->num_rows > 0){
+      // if($music_result->num_rows > 0){
       
-        $music_title = $row['title'];
-        $image = $row['album'];
+        // $music_title = $row['title'];
+        // $image = $row['album'];
 
         $post_list = ' 
         <div class="post" onclick="postId('. $id .')" style="cursor: pointer;"> 
@@ -62,9 +62,9 @@ if ($result->num_rows > 0) {
         </div>';
 
         echo $post_list;
-      }else{
-        echo "<span>음악이 없습니다.</span>";
-      }
+      // }else{
+      //   echo "<span>음악이 없습니다.</span>";
+      // }
   }// while
 } else {
   echo "<span>게시글이 없습니다.</span>";
