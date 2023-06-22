@@ -10,44 +10,54 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // 연결 오류 확인
 if ($conn->connect_error) {
-  die("데이터베이스 연결 실패: " . $conn->connect_error);
+    die("데이터베이스 연결 실패: " . $conn->connect_error);
 }
 
+// 선택한 감정 값 가져오기
+$emotion = $_GET['emotion'];
+
 // 데이터 조회 쿼리
-$sql = "SELECT information.id, information.title, music.album
-        FROM information
-        LEFT JOIN music ON information.music = music.id";
+if ($emotion == 'all') {
+    $sql = "SELECT information.id, information.title, music.album
+            FROM information
+            LEFT JOIN music ON information.music = music.id";
+} else {
+    $sql = "SELECT information.id, information.title, music.album
+            FROM information
+            LEFT JOIN music ON information.music = music.id
+            WHERE information.emotion = '$emotion'";
+}
 
 // 쿼리 실행 및 결과 가져오기
 $result = $conn->query($sql);
 
+// 결과 배열 초기화
+$posts = array();
+
 // 결과 출력
 if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $post_id = $row['id'];
-    $write_title = $row['title'];
-    $image = $row['album'];
+    while ($row = $result->fetch_assoc()) {
+        $post_id = $row['id'];
+        $write_title = $row['title'];
+        $image = $row['album'];
 
-    $post_list = ' 
-      <div class="post" onclick="postId('. $post_id .')"> 
-        <div class="image">
-        <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
-        </div>
-        <div class="span_wrapper">
-            <span class="title">
-                ' . $write_title . '
-            </span>
-            <span class="song">
-            </span>
-        </div>
-      </div>';
+        $post = array(
+            "id" => $post_id,
+            "title" => $write_title,
+            "image" => "data:image/jpeg;base64," . base64_encode($image)
+        );
 
-    echo $post_list;
-  }
+        $posts[] = $post;
+    }
+
+    // JSON 형태로 결과 반환
+    $response = array("posts" => $posts);
 } else {
-  echo "<span>게시글이 없습니다.</span>";
+    // 게시글이 없을 때 "게시글이 없습니다." 메시지 반환
+    $response = array("message" => "게시글이 없습니다.");
 }
 
+echo json_encode($response);
 
 // 데이터베이스 연결 종료
 $conn->close();
