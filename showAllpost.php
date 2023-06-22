@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
         $post = array(
             "id" => $post_id,
             "title" => $write_title,
-            "image" => "data:image/jpeg;base64," . base64_encode($image)
+            "image" => $image
         );
 
         $posts[] = $post;

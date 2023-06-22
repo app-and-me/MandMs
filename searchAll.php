@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
         $musicElement = '
         <div class="result">
             <div class="image">
-                <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                <img src="'. $image .'" alt="">
             </div>
             <span class="musicTitle">' . $title . '</span>
             <div class="icons">
