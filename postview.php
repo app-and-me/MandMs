@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $post_view = '
                 <div class="musicInfo">
                         <div id="musicCover">
-                            <img src="'. $image .'" alt="">
+                            <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
                         </div>
                         <span id="musicTitle">
                             ' . $music_title . '
