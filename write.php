@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // 동적으로 추가할 HTML 코드 생성
             $musicwrite = '
                     <div id="musicCover">
-                        <img src="data:image/jpeg;base64,' . base64_encode($image) . '" alt="">
+                        s<img src="'. $image .'" alt="">
                     </div>
                     <span id="musicTitle">' . $music_title . ' - ' . $artist . '</span>
                     <audio src="' . $audio . '" autoplay loop></audio>';
