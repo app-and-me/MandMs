@@ -26,8 +26,9 @@ function showAllPost() {
                             <span class="song"></span>
                         </div>
                     `;
+                    postElement.setAttribute('data-id', post.id);  // 게시물 ID 저장
                     postElement.addEventListener('click', function() {
-                        postId(post.id);
+                        postId(this.getAttribute('data-id'));  // 해당 게시물의 ID 전달
                     });
                     bottomWrapper.appendChild(postElement);
                 }
