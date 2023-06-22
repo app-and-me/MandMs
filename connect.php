@@ -165,7 +165,7 @@ VALUES ('1 of 1', '샤이니', '"  . $conn->real_escape_string(file_get_contents
        ('stikcer', '엔씨티 127', '"  . $conn->real_escape_string(file_get_contents("img/스티커.png")) . "', 'music/stikcer.mp3'),
        ('오르골', '엔씨티 127', '"  . $conn->real_escape_string(file_get_contents("img/오르골.png")) . "', 'music/오르골.mp3'),
        ('버퍼링', '엔씨티', '"  . $conn->real_escape_string(file_get_contents("img/버퍼링.png")) . "', 'music/버퍼링.mp3'),
-       ('i aint worried', '원퍼블릭', '"  . $conn->real_escape_string(file_get_contents("img/i aint worried.png")) . "', 'music/i aint worried.mp3'),
+       ('i aint worried', '원퍼블릭', '"  . $conn->real_escape_string(file_get_contents("img/i ain't worried.png")) . "', 'music/i aint worried.mp3'),
        ('dice', '엔믹스', '"  . $conn->real_escape_string(file_get_contents("img/dice.png")) . "', 'music/NMIXX DICE Lyrics (엔믹스 DICE 가사) (Color Coded Lyrics).mp3'),
        ('o.o', '엔믹스', '"  . $conn->real_escape_string(file_get_contents("img/o.o.png")) . "', 'music/o.o.mp3'),
        ('에이틴', '세븐틴', '"  . $conn->real_escape_string(file_get_contents("img/에이틴.png")) . "', 'music/SEVENTEEN (세븐틴) - A-TEEN (에이틴 OST) [Lyrics Color Coded Han Rom Eng].mp3'),
