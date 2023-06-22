@@ -49,3 +49,7 @@ document.getElementById('emoji_select').addEventListener('change', showAllPost);
 
 // 페이지 로드 시 초기 데이터 표시
 window.addEventListener('load', showAllPost);
+
+function postId(id) {
+    window.location.href = 'postview.html?id=' + id;
+}
