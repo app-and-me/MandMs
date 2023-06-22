@@ -20,12 +20,14 @@ $emotion = $_GET['emotion'];
 if ($emotion == 'all') {
     $sql = "SELECT information.id, information.title, music.album
             FROM information
-            LEFT JOIN music ON information.music = music.id";
+            LEFT JOIN music ON information.music = music.id
+            ORDER BY information.id DESC";
 } else {
     $sql = "SELECT information.id, information.title, music.album
             FROM information
             LEFT JOIN music ON information.music = music.id
-            WHERE information.emotion = '$emotion'";
+            WHERE information.emotion = '$emotion'
+            ORDER BY information.id DESC";
 }
 
 // 쿼리 실행 및 결과 가져오기
